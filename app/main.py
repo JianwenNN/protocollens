@@ -1,6 +1,7 @@
 import streamlit as st
 from app.orchestrator import ProtocolOrchestrator
 from config import Config
+from app.utils.pdf_parser import PDFParser
 
 st.set_page_config(
     page_title="ProtocolLens",
@@ -92,3 +93,57 @@ with st.sidebar:
     st.markdown("### 🔗 Resources")
     st.markdown("[GitHub Repo](https://github.com/yourusername/protocollens)")
     st.markdown("[Gemini 3 Hackathon](https://gemini3.devpost.com/)")
+
+    st.markdown("### 📄 Upload Protocol")
+
+uploaded_file = st.file_uploader(
+    "Choose a PDF file", 
+    type=['pdf'],
+    help="Upload a clinical trial protocol PDF"
+)
+
+if uploaded_file is not None:
+    with st.spinner("📖 Parsing PDF..."):
+        try:
+            # Parse PDF
+            parser = PDFParser()
+            protocol_text = parser.parse_uploaded_file(uploaded_file)
+            
+            # Show metadata
+            metadata = parser.get_metadata_summary()
+            
+            with st.expander("📊 PDF Information"):
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.metric("Pages", metadata['page_count'])
+                    st.metric("Words", parser.estimate_word_count())
+                with col2:
+                    if metadata['title'] != 'Unknown':
+                        st.write(f"**Title:** {metadata['title']}")
+                    if metadata['author'] != 'Unknown':
+                        st.write(f"**Author:** {metadata['author']}")
+            
+            # Clean text
+            clean_text = parser.clean_text(protocol_text)
+            
+            # Show preview
+            with st.expander("📝 Text Preview"):
+                st.text_area(
+                    "Extracted Text (first 2000 characters)",
+                    clean_text[:2000] + "...",
+                    height=200
+                )
+            
+            # Analyze button
+            if st.button("🔍 Analyze Protocol", type="primary"):
+                with st.spinner("Analyzing..."):
+                    # Use orchestrator
+                    orchestrator = ProtocolOrchestrator()
+                    result = orchestrator.extract_inclusion(clean_text)
+                    
+                    # Display results
+                    st.success("✅ Analysis complete!")
+                    # ... rest of your display code ...
+                    
+        except Exception as e:
+            st.error(f"❌ Error parsing PDF: {str(e)}")
