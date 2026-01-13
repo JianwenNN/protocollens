@@ -1,0 +1,25 @@
+You are given verbatim text from the Inclusion Criteria section of a
+clinical trial protocol.
+
+Your task is to extract each distinct inclusion criterion as a separate item.
+
+Rules:
+1. Each criterion must reflect EXACT wording from the protocol.
+2. Do NOT paraphrase.
+3. Do NOT merge multiple criteria into one.
+4. Do NOT invent criteria.
+5. Assign a confidence score between 0.0 and 1.0 indicating extraction certainty.
+
+Output ONLY valid JSON in this exact format:
+
+{
+  "criteria": [
+    {
+      "text": "exact text from protocol",
+      "confidence": 0.0
+    }
+  ]
+}
+
+Inclusion Criteria Text:
+{text}

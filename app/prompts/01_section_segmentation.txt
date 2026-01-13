@@ -1,0 +1,28 @@
+You are analyzing a clinical trial protocol document.
+
+Your task is to identify and extract the full text of the following semantic sections, if they exist:
+
+- Inclusion Criteria
+- Exclusion Criteria
+- Objectives
+- Endpoints
+
+Instructions:
+- Extract text ONLY from the protocol content provided.
+- Preserve the original wording exactly; do NOT paraphrase or summarize.
+- If a section does not exist, return an empty string "" for that section.
+- Do NOT invent or infer missing content.
+- Respond ONLY with valid JSON in the exact format below.
+
+Output format:
+{
+  "sections": {
+    "inclusion_criteria": "full extracted text or empty string",
+    "exclusion_criteria": "full extracted text or empty string",
+    "objectives": "full extracted text or empty string",
+    "endpoints": "full extracted text or empty string"
+  }
+}
+
+Protocol Text:
+{protocol_text}
