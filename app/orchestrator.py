@@ -11,28 +11,25 @@ class ProtocolOrchestrator:
     """
     def __init__(self):
         self.client = GeminiClient()
+    
+    def run(self, protocol_text: str) -> dict:
+        """
+        Run the full analysis pipeline on raw protocol text.
 
-    # def analyze_protocol(self, protocol_text: str) -> dict:
-    #     """
-    #     Entry point for protocol analysis.
+        Args:
+            protocol_text (str): Full clinical trial protocol text
 
-    #     Args:
-    #         protocol_text (str): Raw clinical trial protocol text
+        Returns:
+            dict: Structured analysis result
+        """
+        sections = self._segment_sections(protocol_text)
 
-    #     Returns:
-    #         Dict: Structured analysis results
-    #     """
-    #     sections = self._segment_sections(protocol_text)
+        inclusion = self._extract_inclusion(sections)
 
-    #     inclusion = self._extract_inclusion(sections.get("inclusion_criteria", ""))
-
-    #     return {
-    #         "inclusion_criteria": inclusion,
-    #         "metadata": {
-    #             "has_inclusion_section": bool(sections.get("inclusion_criteria")),
-    #             "has_exclusion_section": bool(sections.get("exclusion_criteria")),
-    #         },
-    #     }
+        return {
+            "sections_detected": list(sections.keys()),
+            "criteria": inclusion
+        }
     
     def _segment_sections(self, protocol_text: str) -> dict:
         """
