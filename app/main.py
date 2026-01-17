@@ -3,7 +3,12 @@ from app.orchestrator import ProtocolOrchestrator
 from config import Config
 from app.utils.pdf_parser import PDFParser
 
-st.set_page_config(page_title="ProtocolLens", page_icon="🔬", layout="wide")
+st.set_page_config(
+    page_title="ProtocolLens",
+    page_icon="🔬",
+    layout="wide"
+)
+
 st.title("🔬 ProtocolLens")
 st.markdown("*AI-powered Clinical Trial Protocol Analyzer*")
 
@@ -19,39 +24,86 @@ def get_orchestrator():
 
 orchestrator = get_orchestrator()
 
-# Input method
-input_method = st.radio("Choose input method:", ["Paste Text", "Upload PDF"])
+# Sidebar info
+with st.sidebar:
+    st.markdown("### ℹ️ About")
+    st.markdown("""
+    ProtocolLens uses Google's Gemini API to automatically extract and analyze 
+    key information from clinical trial protocols.
+    
+    **Current Features:**
+    - ✅ Inclusion criteria extraction
+    - ✅ Exclusion criteria extraction
+    - 🚧 Objectives and Endpoints (coming soon)
+    """)
+    
+    st.markdown("### 🔗 Resources")
+    st.markdown("[GitHub Repo](https://github.com/yourusername/protocollens)")
+    st.markdown("[Gemini 3 Hackathon](https://gemini3.devpost.com/)")
 
-protocol_text = None
+# Main interface
+st.markdown("### 📄 Upload or Paste Protocol")
+input_method = st.radio(
+    "Choose input method:",
+    ["Paste Text", "Upload PDF"]
+)
 
+protocol_text = ""
 if input_method == "Paste Text":
-    protocol_text = st.text_area("Paste protocol text:", height=300)
+    protocol_text = st.text_area(
+        "Paste clinical trial protocol text:",
+        height=300,
+        placeholder="Paste the protocol content here..."
+    )
+
 elif input_method == "Upload PDF":
-    uploaded_file = st.file_uploader("Choose a PDF file", type=['pdf'])
+    uploaded_file = st.file_uploader(
+        "Choose a PDF file", 
+        type=['pdf'],
+        help="Upload a clinical trial protocol PDF"
+    )
     if uploaded_file:
         parser = PDFParser()
         try:
             protocol_text = parser.parse_uploaded_file(uploaded_file)
+            st.success(f"✅ PDF parsed successfully ({len(protocol_text)} characters)")
         except Exception as e:
             st.error(f"❌ Error parsing PDF: {str(e)}")
 
-# Trigger analysis
-if protocol_text and st.button("🔍 Analyze Protocol"):
-    with st.spinner("Analyzing protocol..."):
-        try:
-            result = orchestrator.run(protocol_text)
+# Analyze button
+if st.button("🔍 Analyze Protocol"):
+    if not protocol_text:
+        st.warning("Please provide protocol text or upload a PDF first")
+    else:
+        with st.spinner("Analyzing protocol..."):
+            try:
+                result = orchestrator.run(protocol_text)
 
-            st.success("✅ Analysis complete!")
-            
-            # Minimal output
-            if result.get("criteria"):
+                st.success("✅ Analysis complete!")
+
+                # Display Inclusion Criteria
+                inclusion = result["inclusion_criteria"]
                 st.markdown("### 📋 Inclusion Criteria")
-                for i, c in enumerate(result["criteria"], 1):
-                    st.markdown(f"{i}. {c['text']} (confidence: {c.get('confidence', 0):.2f})")
-            
-            # Show raw JSON
-            with st.expander("🔧 Raw JSON"):
-                st.json(result)
+                if inclusion["text"]:
+                    st.markdown(f"**Text:** {inclusion['text']}")
+                    st.markdown(f"**Confidence:** {inclusion['confidence']:.2f}")
+                    st.markdown(f"**Source Sections:** {', '.join(inclusion['source_sections'])}")
+                else:
+                    st.info("No inclusion criteria found")
 
-        except Exception as e:
-            st.error(f"❌ Error: {str(e)}")
+                # Display Exclusion Criteria
+                exclusion = result["exclusion_criteria"]
+                st.markdown("### 📋 Exclusion Criteria")
+                if exclusion["text"]:
+                    st.markdown(f"**Text:** {exclusion['text']}")
+                    st.markdown(f"**Confidence:** {exclusion['confidence']:.2f}")
+                    st.markdown(f"**Source Sections:** {', '.join(exclusion['source_sections'])}")
+                else:
+                    st.info("No exclusion criteria found")
+
+                # Optional: show full sections JSON
+                with st.expander("🔧 View Full Sections JSON"):
+                    st.json(result["sections"])
+
+            except Exception as e:
+                st.error(f"❌ Error during analysis: {str(e)}")

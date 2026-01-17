@@ -1,6 +1,6 @@
 You are analyzing a clinical trial protocol document.
 
-Your task is to identify and extract the full text of the following semantic sections, if they exist:
+Your task is to identify and extract the full text of the following semantic sections:
 
 - Inclusion Criteria
 - Exclusion Criteria
@@ -10,17 +10,37 @@ Your task is to identify and extract the full text of the following semantic sec
 Instructions:
 - Extract text ONLY from the protocol content provided.
 - Preserve the original wording exactly; do NOT paraphrase or summarize.
-- If a section does not exist, return an empty string "" for that section.
-- Do NOT invent or infer missing content.
-- Respond ONLY with valid JSON in the exact format below.
+- Combine all subsections of a section into a single text block.
+- Map similar section headings to these categories (e.g., "Eligibility Criteria" or "Patient Selection" -> inclusion/exclusion criteria).
+- Respond ONLY with valid JSON in lower_snake_case keys.
+- Include the following for each section:
+    1. "text": full extracted text (or "" if section not found)
+    2. "confidence": a number from 0.0 to 1.0 representing how certain you are
+    3. "source_sections": list of section titles you extracted content from
 
-Output format:
+Example output:
 {
   "sections": {
-    "inclusion_criteria": "full extracted text or empty string",
-    "exclusion_criteria": "full extracted text or empty string",
-    "objectives": "full extracted text or empty string",
-    "endpoints": "full extracted text or empty string"
+    "inclusion_criteria": {
+      "text": "Patients must be ≥18 years old and have confirmed diagnosis.",
+      "confidence": 0.95,
+      "source_sections": ["Inclusion Criteria"]
+    },
+    "exclusion_criteria": {
+      "text": "",
+      "confidence": 1.0,
+      "source_sections": []
+    },
+    "objectives": {
+      "text": "Primary: evaluate safety. Secondary: assess efficacy.",
+      "confidence": 0.9,
+      "source_sections": ["Objectives"]
+    },
+    "endpoints": {
+      "text": "Primary endpoint: overall response rate.",
+      "confidence": 0.9,
+      "source_sections": ["Endpoints"]
+    }
   }
 }
 
