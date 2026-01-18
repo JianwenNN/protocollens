@@ -63,7 +63,7 @@ class GeminiClient:
 
         for _ in range(max_retries + 1):
             raw = self.generate(full_prompt, model)
-
+            raw = raw.strip()
             try:
                 return json.loads(raw)
             except json.JSONDecodeError as e:

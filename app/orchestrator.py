@@ -19,8 +19,7 @@ class ProtocolOrchestrator:
         """
         with open("app/prompts/01_section_segmentation.txt") as f:
             prompt_template = f.read()
-
-        prompt = prompt_template.format(protocol_text=protocol_text)
+        prompt = prompt_template.replace("{protocol_text}", protocol_text)
 
         result = self.client.extract_json(prompt)
 
@@ -35,7 +34,7 @@ class ProtocolOrchestrator:
                 "confidence": confidence,
                 "source_sections": source
             }
-
+        print(sections)
         return sections
 
     def _extract_inclusion(self, sections: dict) -> dict:
@@ -45,8 +44,8 @@ class ProtocolOrchestrator:
 
         with open("app/prompts/02_inclusion_criteria_extraction.txt") as f:
             prompt_template = f.read()
-
-        prompt = prompt_template.format(text=inclusion_text)
+        print(inclusion_text)
+        prompt = prompt_template.replace("{text}", inclusion_text)
 
         result = self.client.extract_json(prompt)
 
@@ -64,7 +63,7 @@ class ProtocolOrchestrator:
         with open("app/prompts/03_exclusion_criteria_extraction.txt") as f:
             prompt_template = f.read()
 
-        prompt = prompt_template.format(text=exclusion_text)
+        prompt = prompt_template.replace("{text}", exclusion_text)
 
         result = self.client.extract_json(prompt)
 
@@ -78,6 +77,7 @@ class ProtocolOrchestrator:
         """
         Full orchestrator pipeline.
         """
+        print("Starting to run.....\n")
         sections = self._segment_sections(protocol_text)
         inclusion = self._extract_inclusion(sections)
         exclusion = self._extract_exclusion(sections)

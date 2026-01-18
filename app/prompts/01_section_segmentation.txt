@@ -13,36 +13,41 @@ Instructions:
 - Combine all subsections of a section into a single text block.
 - Map similar section headings to these categories (e.g., "Eligibility Criteria" or "Patient Selection" -> inclusion/exclusion criteria).
 - Respond ONLY with valid JSON in lower_snake_case keys.
-- Include the following for each section:
-    1. "text": full extracted text (or "" if section not found)
-    2. "confidence": a number from 0.0 to 1.0 representing how certain you are
-    3. "source_sections": list of section titles you extracted content from
+- Include confidence (0.0-1.0) and source section titles
 
-Example output:
+CRITICAL: Respond with ONLY valid JSON, no markdown, no explanations.
+
+Required JSON structure (DO NOT add extra nesting):
 {
   "sections": {
     "inclusion_criteria": {
-      "text": "Patients must be ≥18 years old and have confirmed diagnosis.",
+      "text": "full extracted text here as a STRING",
       "confidence": 0.95,
-      "source_sections": ["Inclusion Criteria"]
+      "source_sections": ["Section Title 1", "Section Title 2"]
     },
     "exclusion_criteria": {
-      "text": "",
-      "confidence": 1.0,
-      "source_sections": []
+      "text": "full extracted text here as a STRING",
+      "confidence": 0.95,
+      "source_sections": ["Section Title"]
     },
     "objectives": {
-      "text": "Primary: evaluate safety. Secondary: assess efficacy.",
+      "text": "full extracted text here as a STRING",
       "confidence": 0.9,
       "source_sections": ["Objectives"]
     },
     "endpoints": {
-      "text": "Primary endpoint: overall response rate.",
+      "text": "full extracted text here as a STRING",
       "confidence": 0.9,
       "source_sections": ["Endpoints"]
     }
   }
 }
+
+Rules:
+- "text" must be a STRING, not an object
+- If section not found, use empty string ""
+- Confidence must be a number 0.0-1.0
+- source_sections must be an array of strings
 
 Protocol Text:
 {protocol_text}
