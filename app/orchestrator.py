@@ -39,6 +39,13 @@ class ProtocolOrchestrator:
 
     def _extract_inclusion(self, sections: dict) -> dict:
         inclusion_text = sections.get("inclusion_criteria", {}).get("text", "")
+        
+        if isinstance(inclusion_text, dict) and "text" in inclusion_text:
+            inclusion_text = inclusion_text["text"]
+
+        if isinstance(inclusion_text, dict) and "text" in inclusion_text:
+            inclusion_text = inclusion_text["text"]
+        
         if not inclusion_text:
             return {"text": "", "confidence": 1.0, "source_sections": []}
 
@@ -57,6 +64,13 @@ class ProtocolOrchestrator:
 
     def _extract_exclusion(self, sections: dict) -> dict:
         exclusion_text = sections.get("exclusion_criteria", {}).get("text", "")
+
+        if isinstance(exclusion_text, dict) and "text" in exclusion_text:
+            exclusion_text = exclusion_text["text"]
+
+        if isinstance(exclusion_text, dict) and "text" in exclusion_text:
+            exclusion_text = exclusion_text["text"]
+
         if not exclusion_text:
             return {"text": "", "confidence": 1.0, "source_sections": []}
 

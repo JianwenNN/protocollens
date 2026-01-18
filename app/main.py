@@ -82,7 +82,7 @@ if st.button("🔍 Analyze Protocol"):
                 st.success("✅ Analysis complete!")
 
                 # Display Inclusion Criteria
-                inclusion = result["inclusion_criteria"]
+                inclusion = result["sections"]["inclusion_criteria"]
                 st.markdown("### 📋 Inclusion Criteria")
                 if inclusion["text"]:
                     st.markdown(f"**Text:** {inclusion['text']}")
@@ -92,7 +92,7 @@ if st.button("🔍 Analyze Protocol"):
                     st.info("No inclusion criteria found")
 
                 # Display Exclusion Criteria
-                exclusion = result["exclusion_criteria"]
+                exclusion = result["sections"]["exclusion_criteria"]
                 st.markdown("### 📋 Exclusion Criteria")
                 if exclusion["text"]:
                     st.markdown(f"**Text:** {exclusion['text']}")

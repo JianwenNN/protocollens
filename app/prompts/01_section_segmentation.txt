@@ -15,7 +15,17 @@ Instructions:
 - Respond ONLY with valid JSON in lower_snake_case keys.
 - Include confidence (0.0-1.0) and source section titles
 
-CRITICAL: Respond with ONLY valid JSON, no markdown, no explanations.
+IMPORTANT:
+Each section value MUST be a plain string.
+Do NOT wrap section text inside any object.
+Do NOT include confidence scores or metadata.
+Do NOT nest JSON.
+
+Each section value must be either:
+- a string containing verbatim extracted text
+- or an empty string ""
+
+Any violation of this format is incorrect.
 
 Required JSON structure (DO NOT add extra nesting):
 {
@@ -42,12 +52,6 @@ Required JSON structure (DO NOT add extra nesting):
     }
   }
 }
-
-Rules:
-- "text" must be a STRING, not an object
-- If section not found, use empty string ""
-- Confidence must be a number 0.0-1.0
-- source_sections must be an array of strings
 
 Protocol Text:
 {protocol_text}
