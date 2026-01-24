@@ -1,27 +1,65 @@
-You are given verbatim text from the Exclusion Criteria section(s) of a clinical trial protocol.
+You are analyzing the Exclusion Criteria section of a clinical trial protocol.
 
-Your task is to extract each distinct exclusion criterion as a separate item.
+Your task is to extract the exclusion criteria as a LIST OF ATOMIC, MACHINE-READABLE CONDITIONS.
 
-Rules:
-1. Each criterion must reflect the EXACT wording from the protocol text.
-2. Do NOT paraphrase or summarize.
-3. Do NOT merge multiple criteria into one.
-4. Do NOT invent criteria or infer missing information.
-5. Assign a confidence score between 0.0 and 1.0 indicating extraction certainty.
-6. Record the original section(s) from which each criterion was extracted in a list called "source_sections".
-7. If no criteria are found, return an empty list for "criteria".
+Each atomic criterion represents ONE independent reason a subject would be excluded.
 
-Output ONLY valid JSON in the exact format below. Do NOT include any extra text, markdown, or explanation.
+-----------------------------------
+RULES (STRICT)
+-----------------------------------
+
+1. Use ONLY the provided text.
+2. Preserve the original meaning exactly.
+3. Do NOT invent criteria.
+4. Split compound exclusions into multiple atomic criteria when needed.
+5. Do NOT include inclusion criteria.
+6. Respond ONLY with valid JSON.
+7. ALWAYS provide source evidence (exact quotes) for traceability.
+
+-----------------------------------
+OUTPUT FORMAT (MUST FOLLOW EXACTLY)
+-----------------------------------
 
 {
   "criteria": [
     {
-      "text": "exact text from protocol",
-      "confidence": 0.0,
-      "source_sections": ["Exclusion Criteria"]
+      "id": "EXC_01",
+      "text": "<verbatim exclusion criterion>",
+      "category": "<one of: age | diagnosis | comorbidity | medication | lab_value | pregnancy | infection | prior_therapy | safety | other>",
+      "operator": "prohibited | >= | <= | = | none",
+      "value": "<value if applicable, else empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_evidence": [
+        {
+          "section": "<section name where found, e.g., '4.2 Exclusion Criteria'>",
+          "quote": "<EXACT verbatim quote from protocol, keep under 200 chars>",
+          "page": <page number if identifiable, else null>
+        }
+      ]
     }
-  ]
+  ],
+  "confidence": <number between 0.0 and 1.0>,
+  "source_sections": ["<original section title>"]
 }
 
-Exclusion Criteria Text:
+-----------------------------------
+FIELD GUIDANCE
+-----------------------------------
+
+- operator:
+  Use "prohibited" when the condition explicitly disqualifies participation.
+
+- source_evidence:
+  CRITICAL: For each criterion, provide the EXACT quote from the protocol.
+  - section: Name of the section (e.g., "4.2 Exclusion Criteria", "Exclusions")
+  - quote: VERBATIM text from protocol (exact wording, keep concise <200 chars)
+  - page: Page number if you can identify it (optional, can be null)
+  
+  This enables verification and traceability. Do NOT invent quotes.
+  If multiple criteria come from the same sentence, use the same quote.
+
+-----------------------------------
+EXCLUSION CRITERIA TEXT
+-----------------------------------
+
 {text}

@@ -1,0 +1,190 @@
+You are analyzing a full clinical trial protocol document.
+
+Your task is to extract a STRUCTURED CLINICAL TRIAL KNOWLEDGE OBJECT
+from the protocol text.
+
+This is an INFORMATION EXTRACTION task.
+You must NOT summarize, speculate, or add information.
+
+-----------------------------------
+GENERAL RULES (STRICT)
+-----------------------------------
+
+1. Use ONLY information explicitly stated in the protocol.
+2. Preserve original meaning and terminology.
+3. Do NOT invent or infer missing details.
+4. If a field cannot be confidently extracted, leave it empty ("", [], or null as specified).
+5. Respond ONLY with valid JSON.
+6. Do NOT include markdown, comments, or explanations.
+7. For eligibility criteria, ALWAYS include source evidence (exact quotes).
+
+-----------------------------------
+CANONICAL TRIAL OBJECT SCHEMA
+-----------------------------------
+
+Return a single JSON object with EXACTLY the following structure:
+
+{
+  "trial_metadata": {
+    "title": "",
+    "phase": "",
+    "status": ""
+  },
+  "study_design": {
+    "type": "",
+    "randomization": "",
+    "blinding": "",
+    "control": ""
+  },
+  "population": {
+    "indication": "",
+    "disease_stage": "",
+    "biomarkers": [],
+    "age_range": ""
+  },
+  "eligibility": {
+    "inclusion": {
+      "criteria": [
+        {
+          "id": "INC_01",
+          "text": "",
+          "category": "",
+          "operator": "",
+          "value": "",
+          "confidence": 0.0,
+          "source_evidence": [
+            {
+              "section": "",
+              "quote": "",
+              "page": null
+            }
+          ]
+        }
+      ],
+      "confidence": 0.0
+    },
+    "exclusion": {
+      "criteria": [
+        {
+          "id": "EXC_01",
+          "text": "",
+          "category": "",
+          "operator": "",
+          "value": "",
+          "confidence": 0.0,
+          "source_evidence": [
+            {
+              "section": "",
+              "quote": "",
+              "page": null
+            }
+          ]
+        }
+      ],
+      "confidence": 0.0
+    }
+  },
+  "interventions": [
+    {
+      "arm_name": "",
+      "treatment": "",
+      "dose": "",
+      "route": "",
+      "schedule": ""
+    }
+  ],
+  "endpoints": {
+    "primary": [],
+    "secondary": [],
+    "exploratory": []
+  },
+  "study_timeline": {
+    "treatment_duration": "",
+    "follow_up_duration": "",
+    "visit_schedule": []
+  },
+  "safety": {
+    "known_risks": [],
+    "monitoring": []
+  },
+  "sponsors_locations": {
+    "sponsor": "",
+    "locations": []
+  }
+}
+
+-----------------------------------
+FIELD EXTRACTION GUIDANCE
+-----------------------------------
+
+trial_metadata:
+- title: official study title if available
+- phase: e.g., Phase 1, Phase 2/3
+- status: recruiting, completed, terminated, etc.
+
+study_design:
+- type: randomized, observational, crossover, single-arm, etc.
+- randomization: randomized / non-randomized / not specified
+- blinding: open-label, single-blind, double-blind
+- control: placebo, active comparator, none
+
+population:
+- indication: disease or condition under study
+- disease_stage: if specified
+- biomarkers: list of required or relevant biomarkers
+- age_range: e.g., "18–75 years"
+
+eligibility.inclusion / exclusion:
+Each criterion MUST be an ATOMIC condition.
+
+Each criterion object MUST follow this structure:
+
+{
+  "id": "INC_01" or "EXC_01",
+  "text": "<verbatim criterion>",
+  "category": "<age | diagnosis | disease_stage | biomarker | performance_status | lab_value | prior_therapy | comorbidity | reproductive | consent | other>",
+  "operator": "<>= | <= | = | in_range | required | prohibited | none>",
+  "value": "<value if applicable, else empty string>",
+  "confidence": <number between 0.0 and 1.0>,
+  "source_evidence": [
+    {
+      "section": "<section name, e.g., 'Inclusion Criteria'>",
+      "quote": "<EXACT verbatim quote, under 200 chars>",
+      "page": <page number or null>
+    }
+  ]
+}
+
+CRITICAL: source_evidence is REQUIRED for all criteria.
+- section: Name of section where found
+- quote: VERBATIM text from protocol (exact wording)
+- page: Page number if identifiable (optional)
+
+This enables verification and traceability.
+
+interventions:
+- One object per treatment arm
+- Include dose, route, and schedule only if explicitly stated
+
+endpoints:
+- Use original endpoint wording
+- Separate into primary / secondary / exploratory when specified
+
+study_timeline:
+- treatment_duration: total planned treatment length
+- follow_up_duration: follow-up period
+- visit_schedule: list of visits or assessment timepoints
+
+safety:
+- known_risks: explicitly mentioned adverse events or risks
+- monitoring: safety labs, imaging, or procedures
+
+sponsors_locations:
+- sponsor: company, institution, or organization
+- locations: countries, regions, or sites
+
+-----------------------------------
+PROTOCOL TEXT
+-----------------------------------
+
+{protocol_text}

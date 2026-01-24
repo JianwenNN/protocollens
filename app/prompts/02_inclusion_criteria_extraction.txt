@@ -1,27 +1,90 @@
-You are given verbatim text from the Inclusion Criteria section(s) of a clinical trial protocol.
+You are analyzing the Inclusion Criteria section of a clinical trial protocol.
 
-Your task is to extract each distinct inclusion criterion as a separate item.
+Your task is to extract the inclusion criteria as a LIST OF ATOMIC, MACHINE-READABLE CONDITIONS.
 
-Rules:
-1. Each criterion must reflect the EXACT wording from the protocol text.
-2. Do NOT paraphrase or summarize.
-3. Do NOT merge multiple criteria into one.
-4. Do NOT invent criteria or infer missing information.
-5. Assign a confidence score between 0.0 and 1.0 indicating extraction certainty.
-6. Record the original section(s) from which each criterion was extracted in a list called "source_sections".
-7. If no criteria are found, return an empty list for "criteria".
+An atomic criterion represents ONE logical requirement that can be evaluated independently.
 
-Output ONLY valid JSON in the exact format below. Do NOT include any extra text, markdown, or explanation.
+-----------------------------------
+RULES (STRICT)
+-----------------------------------
+
+1. Use ONLY the provided text.
+2. Preserve the original meaning exactly.
+3. Do NOT invent criteria.
+4. Split compound sentences into multiple atomic criteria when needed.
+5. If a criterion is vague or descriptive, still extract it as text.
+6. Do NOT include exclusion criteria.
+7. Respond ONLY with valid JSON.
+8. ALWAYS provide source evidence (exact quotes) for traceability.
+
+-----------------------------------
+WHAT IS AN ATOMIC CRITERION?
+-----------------------------------
+
+GOOD:
+- "Age ≥ 18 years"
+- "Histologically confirmed non-small cell lung cancer"
+- "ECOG performance status 0–1"
+
+BAD:
+- Paragraph summaries
+- Combined AND/OR logic blobs
+
+-----------------------------------
+OUTPUT FORMAT (MUST FOLLOW EXACTLY)
+-----------------------------------
 
 {
   "criteria": [
     {
-      "text": "exact text from protocol",
-      "confidence": 0.0,
-      "source_sections": ["Inclusion Criteria"]
+      "id": "INC_01",
+      "text": "<verbatim criterion>",
+      "category": "<one of: age | diagnosis | disease_stage | biomarker | performance_status | prior_therapy | lab_value | reproductive | consent | other>",
+      "operator": "<= | >= | = | in_range | required | none>",
+      "value": "<value if applicable, else empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_evidence": [
+        {
+          "section": "<section name where found, e.g., '4.1 Inclusion Criteria'>",
+          "quote": "<EXACT verbatim quote from protocol, keep under 200 chars>",
+          "page": <page number if identifiable, else null>
+        }
+      ]
     }
-  ]
+  ],
+  "confidence": <number between 0.0 and 1.0>,
+  "source_sections": ["<original section title>"]
 }
 
-Inclusion Criteria Text:
+-----------------------------------
+FIELD GUIDANCE
+-----------------------------------
+
+- text:
+  Verbatim criterion text.
+
+- category:
+  Choose the closest matching category.
+  If unsure, use "other".
+
+- operator / value:
+  Populate ONLY if explicitly stated.
+  Otherwise use "none" and empty string.
+
+- confidence:
+  Your confidence that this criterion was correctly extracted.
+
+- source_evidence:
+  CRITICAL: For each criterion, provide the EXACT quote from the protocol.
+  - section: Name of the section (e.g., "4.1 Inclusion Criteria", "Eligibility")
+  - quote: VERBATIM text from protocol (exact wording, keep concise <200 chars)
+  - page: Page number if you can identify it (optional, can be null)
+  
+  This enables verification and traceability. Do NOT invent quotes.
+  If multiple criteria come from the same sentence, use the same quote.
+
+-----------------------------------
+INCLUSION CRITERIA TEXT
+-----------------------------------
+
 {text}
