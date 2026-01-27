@@ -305,7 +305,7 @@ if not Config.GEMINI_API_KEY:
 # Initialize components
 @st.cache_resource
 def get_orchestrator():
-    return ProtocolOrchestrator(model=Config.FLASH_MODEL)
+    return ProtocolOrchestrator()
 
 @st.cache_resource
 def get_eligibility_checker():
@@ -395,42 +395,40 @@ with st.sidebar:
     Built with Google Gemini 3 API.
     """)
 
-# Main interface
-st.markdown("## 📄 Upload Protocol")
+# ========== Protocol Input Section ==========
+st.markdown("### 📄 Protocol Input")
 
-input_method = st.radio(
-    "Input method:",
-    ["📝 Paste Text", "📎 Upload PDF"],
-    horizontal=True
+# Initialize uploaded_file in session state
+if 'uploaded_pdf' not in st.session_state:
+    st.session_state.uploaded_pdf = None
+
+# PDF Upload (Primary method - recommended!)
+uploaded_file = st.file_uploader(
+    "📎 Upload Protocol PDF",
+    type=['pdf'],
+    help="Upload a clinical trial protocol in PDF format. Gemini will read it directly for better accuracy."
 )
 
-protocol_text = ""
-
-if input_method == "📝 Paste Text":
-    protocol_text = st.text_area(
-        "Paste clinical trial protocol:",
-        height=250,
-        placeholder="Paste the full protocol text here..."
-    )
-
-elif input_method == "📎 Upload PDF":
-    uploaded_file = st.file_uploader(
-        "Choose a PDF file", 
-        type=['pdf'],
-        help="Upload a clinical trial protocol PDF"
-    )
+# Store uploaded file in session state
+if uploaded_file is not None:
+    st.session_state.uploaded_pdf = uploaded_file
+    st.success(f"✅ PDF uploaded: {uploaded_file.name}")
     
-    if uploaded_file:
-        with st.spinner("📖 Parsing PDF..."):
-            parser = PDFParser()
-            try:
-                protocol_text = parser.parse_uploaded_file(uploaded_file)
-                st.success(f"✅ PDF parsed: {len(protocol_text):,} characters")
-                    
-            except Exception as e:
-                st.error(f"❌ Error parsing PDF: {str(e)}")
+    # Show file info
+    file_size_mb = uploaded_file.size / (1024 * 1024)
+    st.caption(f"📊 File size: {file_size_mb:.2f} MB")
 
-# Analyze button
+# Optional: Text input (fallback method)
+with st.expander("📝 Or paste protocol text (legacy method - less accurate)", expanded=False):
+    st.warning("⚠️ Text input uses legacy parsing. PDF upload is recommended for better accuracy.")
+    protocol_text_input = st.text_area(
+        "Paste protocol text:",
+        height=150,
+        placeholder="Paste full protocol text here...",
+        help="This method is less accurate than PDF upload. Results may miss some criteria."
+    )
+
+# ========== Analyze Button ==========
 st.markdown("---")
 
 col1, col2, col3 = st.columns([1, 2, 1])
@@ -438,22 +436,48 @@ with col2:
     analyze_button = st.button("🔍 Analyze Protocol", use_container_width=True, type="primary")
 
 if analyze_button:
-    if not protocol_text or not protocol_text.strip():
-        st.warning("⚠️ Please provide protocol text or upload a PDF first")
+    # Check what input we have
+    has_pdf = st.session_state.uploaded_pdf is not None
+    has_text = 'protocol_text_input' in locals() and protocol_text_input and protocol_text_input.strip()
+    
+    if not has_pdf and not has_text:
+        st.warning("⚠️ Please upload a PDF or paste protocol text")
     else:
         with st.spinner("🤖 Analyzing protocol..."):
             try:
-                result = orchestrator.run(protocol_text, prefer_fallback=False)
+                # Prefer PDF method (better accuracy!)
+                if has_pdf:
+                    st.info("📄 Using Gemini Direct PDF reading (recommended method)")
+                    result = orchestrator.run_from_pdf_direct(st.session_state.uploaded_pdf)
+                else:
+                    st.warning("⚠️ Using text parsing (legacy method - may miss some criteria)")
+                    result = orchestrator.run(protocol_text_input, prefer_fallback=False)
+                
                 st.session_state.trial_result = result
                 
-                extraction_method_used = result.get("extraction_method", "unknown")
-                st.markdown(f'<div class="success-box">✅ <b>Analysis complete!</b> (Method: {extraction_method_used})</div>', 
-                           unsafe_allow_html=True)
+                extraction_method = result.get("extraction_method", "unknown")
+                
+                # Show success message with method info
+                if extraction_method == "gemini_pdf_direct":
+                    st.markdown(
+                        '<div class="success-box">✅ <b>Analysis complete!</b> '
+                        '(Method: Gemini Direct PDF - Highest Accuracy)</div>', 
+                        unsafe_allow_html=True
+                    )
+                else:
+                    st.markdown(
+                        f'<div class="success-box">✅ <b>Analysis complete!</b> '
+                        f'(Method: {extraction_method} - Consider using PDF upload for better accuracy)</div>', 
+                        unsafe_allow_html=True
+                    )
                 
             except Exception as e:
                 st.error(f"❌ Error during analysis: {str(e)}")
                 with st.expander("🐛 Debug Info"):
                     st.exception(e)
+                    st.write("**Tip:** Try uploading the PDF instead of pasting text for better results")
+
+# ========== Display Results ==========
 
 # Display results
 if st.session_state.trial_result is not None:
@@ -596,7 +620,7 @@ if st.session_state.trial_result is not None:
                             st.session_state.user_role
                         )
                         
-                        answer = orchestrator.client.generate(role_prompt, model=Config.FLASH_MODEL)
+                        answer = orchestrator.ask_question(result, question)
                         
                         st.markdown("**Answer:**")
                         st.info(answer)

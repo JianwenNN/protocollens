@@ -417,3 +417,64 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [⬆ Back to Top](#-protocollens)
 
 </div>
+
+```
+protocollens
+├─ app
+│  ├─ eligibility_checker.py
+│  ├─ main.py
+│  ├─ orchestrator.py
+│  ├─ prompts
+│  │  ├─ 01_section_segmentation.txt
+│  │  ├─ 02_inclusion_criteria_extraction.txt
+│  │  ├─ 03_exclusion_criteria_extraction.txt
+│  │  ├─ ask_from_trial.txt
+│  │  ├─ boundary_detection.py
+│  │  ├─ extract_trial_object.txt
+│  │  ├─ role_specific_qa.py
+│  │  └─ __init__.py
+│  ├─ schemas
+│  │  └─ trial.py
+│  ├─ utils
+│  │  ├─ gemini_client.py
+│  │  ├─ gemini_client_with_pdf.py
+│  │  ├─ pdf_parser.py
+│  │  └─ __init__.py
+│  └─ __init__.py
+├─ config.py
+├─ etc
+│  └─ jupyter
+│     └─ nbconfig
+│        └─ notebook.d
+│           └─ pydeck.json
+├─ Lib
+├─ README.md
+├─ requirements.txt
+├─ Scripts
+│  ├─ dotenv.exe
+│  ├─ dumppdf.py
+│  ├─ f2py.exe
+│  ├─ jsonschema.exe
+│  ├─ normalizer.exe
+│  ├─ numpy-config.exe
+│  ├─ pdf2txt.py
+│  ├─ pdfplumber.exe
+│  ├─ pip3.13.exe
+│  ├─ pip3.exe
+│  ├─ pypdfium2.exe
+│  ├─ streamlit.cmd
+│  ├─ streamlit.exe
+│  └─ watchmedo.exe
+├─ share
+│  └─ jupyter
+│     └─ nbextensions
+│        └─ pydeck
+│           ├─ extensionRequires.js
+│           ├─ index.js
+│           └─ index.js.map
+├─ tests
+│  ├─ test_orchestrator.py
+│  └─ test_pdf_parser.py
+└─ test_setup.py
+
+```
