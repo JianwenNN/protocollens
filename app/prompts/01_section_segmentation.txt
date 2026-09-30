@@ -1,0 +1,86 @@
+You are analyzing a clinical trial protocol document.
+
+Your task is to identify and extract the FULL, VERBATIM text of the following
+high-level semantic sections from the protocol:
+
+- Inclusion Criteria
+- Exclusion Criteria
+- Objectives
+- Endpoints
+
+This is a SEMANTIC SEGMENTATION task.
+You are NOT summarizing, interpreting, or restructuring content.
+
+-----------------------------------
+EXTRACTION RULES (STRICT)
+-----------------------------------
+
+1. Extract text ONLY from the provided protocol content.
+2. Preserve the original wording EXACTLY.
+   - Do NOT paraphrase
+   - Do NOT summarize
+   - Do NOT reformat
+3. If a section appears in multiple places or under multiple headings,
+   concatenate all relevant text into ONE continuous string.
+4. Map semantically equivalent headings to the target sections.
+   Examples:
+   - "Eligibility Criteria", "Patient Selection" → Inclusion / Exclusion Criteria
+   - "Study Objectives", "Study Goals" → Objectives
+   - "Outcome Measures", "Primary/Secondary Outcomes" → Endpoints
+5. If a section cannot be confidently identified, return an empty string "".
+
+-----------------------------------
+OUTPUT FORMAT (MUST FOLLOW EXACTLY)
+-----------------------------------
+
+Respond ONLY with valid JSON.
+Do NOT include markdown, comments, or explanations.
+
+Return a single top-level object with the following structure:
+
+{
+  "sections": {
+    "inclusion_criteria": {
+      "text": "<verbatim extracted text or empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_sections": ["<original section title>", "..."]
+    },
+    "exclusion_criteria": {
+      "text": "<verbatim extracted text or empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_sections": ["<original section title>", "..."]
+    },
+    "objectives": {
+      "text": "<verbatim extracted text or empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_sections": ["<original section title>", "..."]
+    },
+    "endpoints": {
+      "text": "<verbatim extracted text or empty string>",
+      "confidence": <number between 0.0 and 1.0>,
+      "source_sections": ["<original section title>", "..."]
+    }
+  }
+}
+
+-----------------------------------
+FIELD DEFINITIONS
+-----------------------------------
+
+- text:
+  The full verbatim extracted content for that semantic section.
+  Must be a STRING. Never null.
+
+- confidence:
+  Your confidence that the extracted text correctly represents the intended
+  semantic section, from 0.0 (low) to 1.0 (high).
+
+- source_sections:
+  A list of the original protocol section titles from which the text was extracted.
+  If unknown, return an empty list [].
+
+-----------------------------------
+PROTOCOL TEXT
+-----------------------------------
+
+{protocol_text}
