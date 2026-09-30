@@ -117,71 +117,335 @@ Return a single JSON object with EXACTLY the following structure:
 FIELD EXTRACTION GUIDANCE
 -----------------------------------
 
-trial_metadata:
-- title: official study title if available
-- phase: e.g., Phase 1, Phase 2/3
-- status: recruiting, completed, terminated, etc.
+=== trial_metadata ===
 
-study_design:
-- type: randomized, observational, crossover, single-arm, etc.
-- randomization: randomized / non-randomized / not specified
-- blinding: open-label, single-blind, double-blind
-- control: placebo, active comparator, none
+Extract the official trial identification information.
 
-population:
-- indication: disease or condition under study
-- disease_stage: if specified
-- biomarkers: list of required or relevant biomarkers
-- age_range: e.g., "18–75 years"
+- title: The official protocol title or study title
+  * Usually found on title page or in "Protocol Title" section
+  * Include the full title, not abbreviated
+  * Example: "A Phase 2, Randomized, Double-Blind Study of Drug X in Patients with Advanced Cancer"
 
-eligibility.inclusion / exclusion:
+- phase: The clinical trial phase
+  * Look for: "Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 1/2", "Phase 2/3"
+  * May appear as "Phase I", "Phase II", etc.
+  * If not specified, leave empty
+
+- status: Current trial status
+  * Common values: "recruiting", "active", "completed", "terminated", "not yet recruiting"
+  * Often found in ClinicalTrials.gov ID section or header
+  * If not specified, leave empty
+
+=== study_design ===
+
+Extract the fundamental study design characteristics.
+
+- type: Basic study design type
+  * Common values: "randomized controlled trial", "single-arm", "crossover", "observational", "dose-escalation"
+  * Look in "Study Design" or "Design Overview" sections
+  * Be specific: "open-label, single-arm, phase 2 study" is better than just "single-arm"
+
+- randomization: Randomization approach
+  * Values: "randomized", "non-randomized", "not applicable"
+  * Look for phrases like "patients will be randomized", "randomization ratio"
+  * If ratio specified, include it: "randomized (1:1)" or "randomized (2:1)"
+
+- blinding: Who is blinded
+  * Values: "open-label", "single-blind", "double-blind", "triple-blind"
+  * "Open-label" means no blinding
+  * Specify who is blinded if stated: "double-blind (patient and investigator)"
+
+- control: Type of control arm
+  * Values: "placebo", "active comparator", "standard of care", "none", "historical control"
+  * Specify the comparator if named: "active comparator (chemotherapy)"
+  * For single-arm studies: "none"
+
+=== population ===
+
+Extract the target patient population characteristics.
+
+- indication: Primary disease or condition under study
+  * Use exact medical terminology from protocol
+  * Include stage/type if specified in indication
+  * Examples: "metastatic breast cancer", "relapsed/refractory acute myeloid leukemia", "type 2 diabetes mellitus"
+
+- disease_stage: Specific disease stage or classification
+  * Look for TNM staging, FIGO staging, disease classification
+  * Examples: "Stage III-IV", "locally advanced or metastatic", "relapsed/refractory"
+  * Only include if explicitly stated; don't infer from indication
+
+- biomarkers: Required or relevant biomarkers
+  * Extract as a list of strings
+  * Include marker name and status if specified
+  * Examples: ["HER2-positive", "EGFR mutation", "PD-L1 ≥50%", "KRAS wild-type"]
+  * Include testing method if specified: "ALK-positive by IHC or FISH"
+
+- age_range: Eligible age range
+  * Extract exact age criteria
+  * Examples: "18 years and older", "18-75 years", "≥65 years"
+  * If only minimum: "≥18 years"; if only maximum: "≤75 years"
+
+=== eligibility.inclusion / exclusion ===
+
 Each criterion MUST be an ATOMIC condition.
+
+⚠️ CRITICAL: Extract EVERY criterion. Count the numbered items in the protocol and ensure your output count matches.
 
 Each criterion object MUST follow this structure:
 
 {
   "id": "INC_01" or "EXC_01",
-  "text": "<verbatim criterion>",
+  "text": "<verbatim criterion text>",
   "category": "<age | diagnosis | disease_stage | biomarker | performance_status | lab_value | prior_therapy | comorbidity | reproductive | consent | other>",
   "operator": "<>= | <= | = | in_range | required | prohibited | none>",
   "value": "<value if applicable, else empty string>",
   "confidence": <number between 0.0 and 1.0>,
   "source_evidence": [
     {
-      "section": "<section name, e.g., 'Inclusion Criteria'>",
-      "quote": "<EXACT verbatim quote, under 200 chars>",
+      "section": "<section name>",
+      "quote": "<exact quote from protocol, max 200 chars>",
       "page": <page number or null>
     }
   ]
 }
 
-CRITICAL: source_evidence is REQUIRED for all criteria.
-- section: Name of section where found
-- quote: VERBATIM text from protocol (exact wording)
-- page: Page number if identifiable (optional)
+Guidelines:
+- Extract EVERY numbered item, including administrative criteria like "signed informed consent"
+- Multi-part criteria (1a, 1b, 1c): Create SEPARATE criteria for each part
+- Compound "AND" conditions: Split if clearly distinct requirements
+- Use verbatim text from protocol
+- Sequential IDs: INC_01, INC_02, etc.
 
-This enables verification and traceability.
+=== interventions ===
 
-interventions:
-- One object per treatment arm
-- Include dose, route, and schedule only if explicitly stated
+⭐ ENHANCED: Extract complete intervention/treatment information ⭐
 
-endpoints:
-- Use original endpoint wording
-- Separate into primary / secondary / exploratory when specified
+CRITICAL: Extract ALL treatment arms with complete details.
 
-study_timeline:
-- treatment_duration: total planned treatment length
-- follow_up_duration: follow-up period
-- visit_schedule: list of visits or assessment timepoints
+Look for sections titled: "Treatment", "Study Treatment", "Investigational Product", "Treatment Arms", "Study Arms"
 
-safety:
-- known_risks: explicitly mentioned adverse events or risks
-- monitoring: safety labs, imaging, or procedures
+Each intervention object represents ONE treatment arm and should include:
 
-sponsors_locations:
-- sponsor: company, institution, or organization
-- locations: countries, regions, or sites
+- arm_name: Name of the treatment arm
+  * Examples: "Arm A: Experimental", "Cohort 1", "Treatment Group", "Dose Level 1"
+  * If single-arm: "Single Arm" or the treatment name
+  * For dose-escalation: include dose level info
+
+- treatment: Drug/intervention name(s)
+  * Include generic and brand names if both given
+  * For combinations: list all components
+  * Examples: "Pembrolizumab (Keytruda)", "Carboplatin + Paclitaxel", "Drug X 100mg + Drug Y 50mg"
+  * Include formulation if specified: "Drug X (oral tablet)"
+
+- dose: Dosing amount
+  * Include complete dose information with units
+  * Examples: "200 mg", "5 mg/kg", "AUC 5", "100 mg/m²"
+  * For dose ranges: "100-200 mg" or "starting dose 100 mg, may escalate to 200 mg"
+  * For multiple components: specify each: "Drug A: 100mg, Drug B: 50mg"
+
+- route: Route of administration
+  * Common values: "intravenous (IV)", "oral (PO)", "subcutaneous (SC)", "intramuscular (IM)", "intraperitoneal"
+  * Include infusion details if specified: "IV infusion over 30 minutes"
+  * For multiple routes: list each
+
+- schedule: Dosing schedule and frequency
+  * Be complete and specific
+  * Examples: 
+    - "once daily for 21 days, repeated every 28 days"
+    - "Days 1 and 8 of each 21-day cycle"
+    - "continuous dosing"
+    - "weekly for 3 weeks, followed by 1 week rest"
+  * Include cycle length: "28-day cycles" or "21-day cycles"
+  * Include duration if specified: "for 6 cycles" or "until progression"
+
+⚠️ SPECIAL CASES:
+- Dose-escalation studies: Create separate intervention objects for each dose level/cohort
+- Combination therapies: Include all drugs with their individual doses in one intervention
+- Placebo arms: Still create intervention object with treatment="placebo"
+- Multiple phases: Specify if induction/maintenance/consolidation phases have different dosing
+
+Example interventions:
+```json
+[
+  {
+    "arm_name": "Arm A: Experimental",
+    "treatment": "Pembrolizumab (Keytruda) + Carboplatin + Paclitaxel",
+    "dose": "Pembrolizumab 200mg, Carboplatin AUC 5, Paclitaxel 175 mg/m²",
+    "route": "All intravenous (IV)",
+    "schedule": "Pembrolizumab on Day 1, Carboplatin and Paclitaxel on Day 1 of each 21-day cycle for 4 cycles, then Pembrolizumab alone every 3 weeks until progression"
+  },
+  {
+    "arm_name": "Arm B: Control",
+    "treatment": "Carboplatin + Paclitaxel",
+    "dose": "Carboplatin AUC 5, Paclitaxel 175 mg/m²",
+    "route": "Intravenous (IV)",
+    "schedule": "Day 1 of each 21-day cycle for 4-6 cycles"
+  }
+]
+```
+
+=== endpoints ===
+
+⭐ ENHANCED: Extract endpoints with COMPLETE information ⭐
+
+CRITICAL: Extract endpoints with full definitions and assessment details.
+
+Look for sections titled: "Objectives", "Endpoints", "Outcome Measures", "Study Objectives", "Primary/Secondary Outcomes"
+
+Common endpoint terms:
+- Primary: "Primary Endpoint", "Primary Objective", "Primary Outcome", "Primary Efficacy Endpoint"
+- Secondary: "Secondary Endpoint", "Secondary Objective", "Secondary Outcome"
+- Exploratory: "Exploratory Endpoint", "Exploratory Objective", "Exploratory Analysis"
+
+Each endpoint should be a complete string that includes:
+1. The endpoint name/measure (e.g., "Progression-free survival (PFS)")
+2. The definition (e.g., "defined as time from randomization to progression or death")
+3. The assessment method if specified (e.g., "assessed by RECIST 1.1")
+4. Timepoints if specified (e.g., "at 12 months")
+
+Examples of well-extracted endpoints:
+- "Progression-free survival (PFS), defined as the time from randomization to disease progression or death from any cause, assessed by RECIST 1.1"
+- "Overall response rate (ORR), defined as the proportion of patients achieving complete response (CR) or partial response (PR) per RECIST 1.1"
+- "Overall survival (OS), defined as time from randomization to death from any cause"
+- "Change from baseline in HbA1c at 24 weeks"
+- "Incidence of dose-limiting toxicities (DLTs) during the first cycle"
+
+⚠️ SPECIAL CASES:
+- Endpoints in tables: Extract each row as a separate endpoint string
+- Multiple assessment timepoints: Include all (e.g., "at 6, 12, 18, and 24 months")
+- Co-primary endpoints: List separately in primary array
+- Composite endpoints: Include all components (e.g., "composite of death, MI, or stroke")
+- Hierarchical testing: Note if specified (e.g., "tested hierarchically")
+
+Format:
+```json
+{
+  "endpoints": {
+    "primary": [
+      "Complete primary endpoint description with definition and method"
+    ],
+    "secondary": [
+      "Secondary endpoint 1 with definition",
+      "Secondary endpoint 2 with definition"
+    ],
+    "exploratory": [
+      "Exploratory endpoint if specified"
+    ]
+  }
+}
+```
+
+=== study_timeline ===
+
+⭐ ENHANCED: Extract complete timeline and visit schedule ⭐
+
+Look for sections: "Study Schedule", "Schedule of Assessments", "Schedule of Events", "Visit Schedule", "Study Calendar"
+
+- treatment_duration: Total planned treatment length
+  * Be specific about cycles and duration
+  * Examples: 
+    - "6 cycles of 21 days each (18 weeks total)"
+    - "Until disease progression or unacceptable toxicity"
+    - "12 months of continuous treatment"
+    - "Induction: 4 cycles, Maintenance: until progression"
+  * Include different phases if applicable
+
+- follow_up_duration: Follow-up period after treatment
+  * Examples:
+    - "30 days after last dose for safety"
+    - "Survival follow-up every 3 months for up to 2 years"
+    - "Long-term follow-up for 5 years"
+  * Include frequency if specified: "every 3 months for 1 year, then every 6 months"
+
+- visit_schedule: List of visits/assessments with timepoints
+  * Extract as array of strings
+  * Include visit name/number and timing
+  * Examples:
+    - "Screening (within 28 days of first dose)"
+    - "Cycle 1 Day 1 (baseline)"
+    - "Day 1 of each cycle"
+    - "End of treatment visit"
+    - "Safety follow-up (30 days after last dose)"
+    - "Week 4, 8, 12, 16, 24"
+  * Capture from Schedule of Assessments table if present
+  * Include key assessment timepoints
+
+⚠️ SPECIAL CASES:
+- Window periods: Include if specified (e.g., "Week 12 (±3 days)")
+- Different frequencies: Note changes (e.g., "every 2 weeks for first 3 months, then monthly")
+- Intensive vs long-term: Distinguish phases (e.g., "weekly during treatment, then quarterly during follow-up")
+
+=== safety ===
+
+⭐ ENHANCED: Extract safety monitoring information ⭐
+
+Look for sections: "Safety", "Adverse Events", "Risks and Benefits", "Safety Monitoring", "Known Risks"
+
+- known_risks: Explicitly mentioned adverse events or risks
+  * Extract as array of strings
+  * Include severity/frequency if mentioned
+  * Examples:
+    - "Infusion-related reactions (common, usually Grade 1-2)"
+    - "Immune-mediated pneumonitis (uncommon but potentially serious)"
+    - "Neutropenia and thrombocytopenia"
+    - "QT prolongation"
+  * Include known drug class effects
+  * Extract from "Risks and Benefits" or "Known Risks" sections
+  * Include both common and serious risks
+
+- monitoring: Safety assessments and monitoring procedures
+  * Extract as array of strings
+  * Include what is monitored and frequency
+  * Examples:
+    - "Complete blood count (CBC) at every visit"
+    - "Liver function tests (LFTs) at baseline and Day 1 of each cycle"
+    - "ECG with QTc at screening, Day 1 of Cycles 1-3, and end of treatment"
+    - "Thyroid function tests every 6 weeks"
+    - "Physical examination at each visit"
+  * Include DLT monitoring period if specified: "DLT monitoring during first cycle (28 days)"
+  * Capture from Schedule of Assessments table
+
+⚠️ SPECIAL CASES:
+- Dose-limiting toxicities (DLTs): Include definition and monitoring period
+- Organ-specific monitoring: Note which organs and frequency
+- Imaging for safety: Include if specified (e.g., "Brain MRI if neurological symptoms")
+
+=== sponsors_locations ===
+
+⭐ ENHANCED: Extract sponsor and site information ⭐
+
+- sponsor: Primary sponsor/funding organization
+  * Look for: "Sponsor", "Funding Source", "Study Sponsor"
+  * Include full official name
+  * Examples: "Pfizer Inc.", "National Cancer Institute (NCI)", "University of California, San Francisco"
+  * If multiple: list primary sponsor only (or "Multiple sponsors - see protocol")
+  * Include collaborators if explicitly stated: "Sponsored by Company X in collaboration with Company Y"
+
+- locations: Study sites, countries, or regions
+  * Extract as array of strings
+  * Include as much geographic detail as available
+  * Priority order:
+    1. Specific sites if listed: "Memorial Sloan Kettering Cancer Center, New York, NY"
+    2. Cities/regions: "Major cancer centers in New York, Boston, and San Francisco"
+    3. Countries: "United States", "United States and Canada", "Multi-national (US, EU, Asia)"
+    4. General scope: "Approximately 50 sites across the United States"
+  * Look in sections: "Study Sites", "Participating Centers", "Locations", title page
+  * If not specified: return empty array []
+
+-----------------------------------
+QUALITY ASSURANCE REMINDERS
+-----------------------------------
+
+Before generating the final JSON:
+
+✓ Did I read the ENTIRE protocol for each section?
+✓ Did I extract COMPLETE information (not truncated)?
+✓ Did I preserve exact wording where specified?
+✓ Did I include definitions with endpoints?
+✓ Did I include doses AND schedules for interventions?
+✓ Did I count all eligibility criteria?
+✓ Are all arrays properly formatted as JSON arrays?
+✓ Is all output valid JSON with no markdown?
 
 -----------------------------------
 PROTOCOL TEXT
