@@ -98,3 +98,5 @@ credentials.json
 *.pptx
 *.docx
 *.xlsx
+
+pre_test/

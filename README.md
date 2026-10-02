@@ -1,236 +1,167 @@
-# 🔬 ProtocolLens
+# ProtocolLens
 
-**AI-Powered Clinical Trial Protocol Analyzer**
+ProtocolLens helps patients and study teams find clinical trials that may fit, and explains why. Given a plain-language patient description, it searches ClinicalTrials.gov, filters candidates on structured fields, and then judges each eligibility criterion as **met**, **not met**, or **unknown**, citing the source text.
 
-ProtocolLens uses Google's Gemini AI to extract structured information from clinical trial protocols, making complex medical documents instantly searchable and analyzable.
+It also analyzes full protocol PDFs and answers role-specific questions about any trial.
 
----
+> **Status:** The PDF analysis and role-based Q&A work today. Trial matching is under active development. See the [roadmap](#roadmap).
 
-## ✨ Key Features
+> **Disclaimer:** ProtocolLens is a research and portfolio project. It is not medical advice and does not determine eligibility. Results are framed as "potentially eligible"; the final decision always belongs to the study site.
 
-### 🎯 Two-Stage AI Architecture
-- **Stage 1 (Gemini Pro)**: Deep understanding and extraction of complete trial structure
-- **Stage 2 (Gemini Flash)**: Unlimited fast Q&A based on extracted data
+## Why this project
 
-### 📋 Comprehensive Extraction
-- **Eligibility Criteria**: Atomic inclusion/exclusion criteria with evidence
-- **Interventions**: Complete treatment details (dose, route, schedule)
-- **Endpoints**: Primary, secondary, and exploratory outcomes
-- **Study Design**: Randomization, blinding, control arms
-- **Safety**: Known risks and monitoring requirements
-- **Timeline**: Visit schedules and assessment timepoints
+Eligibility criteria on ClinicalTrials.gov are a single block of free text. Headers vary ("Inclusion Criteria" vs. "Key Inclusion Criteria"), bullets are inconsistent, and sub-items are flattened. Keyword search cannot tell a patient whether they qualify.
 
-### 💡 Interactive Q&A
-- Role-based question guidance (Researcher, Physician, Patient)
-- Fast Flash-powered responses (3-5 seconds)
-- Unlimited queries per protocol
+ProtocolLens treats this as two separate problems:
 
----
+1. **Everything structured stays in code.** Condition, location, recruiting status, phase, age, and sex come straight from the API and are filtered without an LLM.
+2. **The LLM is used only where it is needed.** It parses the free-text criteria and judges them one by one against the patient profile, so every conclusion can be traced to a specific criterion.
 
-## 🚀 Quick Start
+## Features
 
-### Prerequisites
-- Python 3.9+
-- Gemini API key ([Get one here](https://ai.google.dev/))
+| Feature | Status |
+| --- | --- |
+| Protocol PDF analysis: extract a structured trial object from an uploaded protocol | Available |
+| Role-based Q&A: ask questions about a trial from a patient, coordinator, or sponsor perspective | Available |
+| Trial search via ClinicalTrials.gov API v2 with location and status filters | In progress |
+| Structured pre-filter (age, sex, study type, per-site recruiting status) | In progress |
+| Per-criterion matching with met / not met / unknown and reasons | In progress |
+| Follow-up questions when patient information is missing | Planned |
+| Deterministic clinical calculators (eGFR, CrCl, BMI, unit conversion) | Planned |
+| Audit trail of every agent decision | Planned |
 
-### Installation
+## How it works
+
+```mermaid
+flowchart TD
+    A[Patient description] --> B[Parse into PatientProfile]
+    B --> C[Search ClinicalTrials.gov API v2]
+    C --> D[Structured pre-filter<br/>no LLM]
+    D --> E[Parse eligibility text<br/>into criteria]
+    E --> F[Match each criterion<br/>met / not met / unknown]
+    F --> G{Key info missing?}
+    G -- yes --> H[Ask follow-up questions]
+    H --> F
+    G -- no --> I[Ranked report with explanations]
+```
+
+1. **Parse the patient description** into a `PatientProfile`. Missing fields stay empty; nothing is guessed.
+2. **Search** the API by condition, keywords, recruiting status, and distance.
+3. **Pre-filter** on structured fields. This step also checks that a nearby site is recruiting, not just the trial overall.
+4. **Parse eligibility** text into individual `Criterion` objects, cached per trial.
+5. **Match** each criterion against the patient. Anything not explicitly stated in the profile is `unknown`.
+6. **Rank and report** each trial with its verdict, per-criterion reasoning, nearest site, and contact.
+
+## Architecture
+
+Two entry points share one core:
+
+```
+Trial matching (new)            PDF analysis (existing)
+        |                               |
+  app/matching/                 pdf_parser, orchestrator
+        |                               |
+        +-------------+-----------------+
+                      |
+               Shared core
+   TrialObject schema · GeminiClient · role-based Q&A
+```
+
+```
+app/
+  schemas/        # TrialObject, Criterion, PatientProfile
+  utils/          # Gemini clients, PDF parser
+  matching/       # API client, mapper, pre-filter, criteria, agent
+  prompts/        # Prompt templates
+  orchestrator.py # PDF entry point
+samples/          # Saved API responses, used as test fixtures
+evals/            # Labeled data and evaluation scripts
+tests/
+docs/design.md    # Design doc
+```
+
+## Tech stack
+
+- Python, Pydantic
+- Google Gemini API (`google-genai`), Flash for parsing and matching, Pro for report synthesis
+- ClinicalTrials.gov API v2 (no API key required)
+- Streamlit UI
+- pdfplumber for the PDF entry point
+
+## Getting started
 
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/protocollens.git
+git clone <your-repo-url>
 cd protocollens
-
-# Install dependencies
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-
-# Set up API key
-echo "GEMINI_API_KEY=your_api_key_here" > .env
-
-# Run application
-streamlit run main.py
 ```
 
----
-
-## 🏗️ Architecture
-
-### Two-Stage Orchestration
+Create a `.env` file in the project root:
 
 ```
-┌─────────────────────────────────────────────┐
-│  Stage 1: Deep Extraction (Gemini Pro)     │
-│  • Native PDF reading                       │
-│  • Complete structure extraction            │
-│  • 100% accuracy on eligibility criteria    │
-│  • One-time per protocol                    │
-└─────────────────┬───────────────────────────┘
-                  │
-                  │ Extracted JSON stored in memory
-                  ▼
-┌─────────────────────────────────────────────┐
-│  Stage 2: Interactive Q&A (Gemini Flash)   │
-│  • Fast query responses (3-5s)              │
-│  • Unlimited questions                      │
-│  • Context-aware answers                    │
-└─────────────────────────────────────────────┘
+GEMINI_API_KEY=your_key_here
 ```
 
-### Benefits
-- **Resource Optimization**: Pro used once, Flash used unlimited times
-- **User Experience**: Initial wait acceptable, subsequent queries instant
-- **Scalability**: 5 Pro calls = 5 deep protocol analyses, each with unlimited interaction
+Run the app:
 
----
-
-## 📊 Extraction Accuracy
-
-| Field | Accuracy | Notes |
-|-------|----------|-------|
-| Inclusion Criteria | 100% | Validated on multiple protocols |
-| Exclusion Criteria | 100% | Atomic criterion extraction |
-| Interventions | 95%+ | Complete dose/schedule/route |
-| Endpoints | 95%+ | With definitions and methods |
-| Study Design | 98%+ | Including randomization details |
-
----
-
-## 🎯 Use Cases
-
-### For Researchers
-- Rapid protocol review and comparison
-- Eligibility criteria analysis
-- Study design assessment
-
-### For Physicians
-- Patient screening support
-- Treatment regimen details
-- Safety monitoring requirements
-
-### For Patients
-- Understanding trial requirements
-- Visit schedule information
-- Treatment duration clarity
-
----
-
-## 🔧 Technology Stack
-
-- **AI Model**: Google Gemini 2.0 (Pro + Flash)
-- **Frontend**: Streamlit
-- **PDF Processing**: Native Gemini PDF understanding
-- **Schema Validation**: Pydantic
-- **Language**: Python 3.9+
-
----
-
-## 📁 Project Structure
-
-```
-protocollens/
-├── app/
-│   ├── orchestrator.py          # Two-stage orchestration logic
-│   ├── main.py                  # Streamlit UI
-│   ├── utils/
-│   │   ├── gemini_client.py           # Base Gemini client
-│   │   └── gemini_client_with_pdf.py  # PDF-enhanced client
-│   ├── prompts/
-│   │   └── extract_trial_object.txt   # Extraction prompt
-│   └── schemas/
-│       └── trial.py             # Pydantic schemas
-├── config.py                    # Configuration
-├── requirements.txt             # Dependencies
-└── README.md
-```
-
----
-
-## 🎓 Key Innovations
-
-### 1. Native PDF Processing
-Unlike traditional text extraction, ProtocolLens uses Gemini's native PDF understanding to:
-- Preserve document layout and formatting
-- Handle multi-column layouts and tables
-- Maintain semantic structure
-
-### 2. Prompt Engineering
-Comprehensive extraction prompts with:
-- 450+ lines of detailed field guidance
-- Specific examples for each data type
-- Special case handling
-- Quality assurance checkpoints
-
-### 3. Atomic Criteria Extraction
-Eligibility criteria are extracted as atomic, structured objects with:
-- Category classification
-- Operator identification
-- Value extraction
-- Source evidence tracking
-
----
-
-## 📈 Performance
-
-- **Extraction Time**: ~40 seconds (Pro, one-time)
-- **Query Time**: 3-5 seconds (Flash, unlimited)
-- **Accuracy**: 95-100% on key fields
-- **API Cost**: ~$0.05 per protocol + ~$0.005 per query
-
----
-
-## 🛠️ Configuration
-
-### Environment Variables
 ```bash
-GEMINI_API_KEY=your_api_key_here
+streamlit run app.py
 ```
 
-### Model Selection
-```python
-# config.py
-class Config:
-    PRO_MODEL = "gemini-1.5-pro"      # Deep extraction
-    FLASH_MODEL = "gemini-2.0-flash-exp"  # Fast queries
-```
+## Data and privacy
 
----
+- All patient examples in this repository are **synthetic**. Do not enter real patient information.
+- ProtocolLens is not HIPAA-compliant and is not designed to handle PHI.
+- Trial data comes from the public ClinicalTrials.gov registry. Registry entries summarize a protocol and can omit details; criteria marked "as defined per protocol" must be confirmed with the study site.
 
-## 🤝 Contributing
+## Roadmap
 
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+Timeline assumes part-time development. P3 and P4 dates are estimates.
 
----
+### P1: Minimal matching loop (Oct 2026)
 
-## 📝 License
+Exit criteria: a patient description returns nearby recruiting trials with per-criterion explanations, demo-ready.
 
-[Your chosen license - e.g., MIT]
+- [ ] ClinicalTrials.gov API client with search, fetch by ID, and local cache
+- [ ] Mapper from API JSON to `TrialObject`
+- [ ] `PatientProfile` schema and patient-description parsing
+- [ ] Structured pre-filter
+- [ ] Criteria parsing with caching
+- [ ] Per-criterion matching
+- [ ] Agent loop on Gemini function calling
+- [ ] Matching page in the Streamlit UI
 
----
+### P2: Evaluation (Nov to Dec 2026)
 
-## 🙏 Acknowledgments
+Exit criteria: this README reports measured results against a baseline.
 
-- Built with Google Gemini AI
-- Developed for [Gemini API Developer Competition / Hackathon name]
+- [ ] Hand-labeled set for criteria parsing (precision / recall)
+- [ ] Trial-level evaluation on TREC Clinical Trials Track data (NDCG@10, Precision@10)
+- [ ] Keyword-search baseline for comparison
 
----
+### P3: Agent upgrade (Jan to Feb 2027, estimated)
 
-## 📧 Contact
+Exit criteria: follow-up questions work end to end; ablation results published.
 
-[Your name/email]
-[Project website/demo link if available]
+- [ ] RxNorm drug-class lookup and deterministic calculators
+- [ ] Follow-up questions for missing patient information
+- [ ] LangGraph orchestration
+- [ ] Per-tool ablation study
 
----
+### P4: MCP and audit trail (from Mar 2027, estimated)
 
-## 🔮 Future Enhancements
+Exit criteria: external MCP clients can call the tools; every agent decision is traceable.
 
-- [ ] Multi-protocol comparison
-- [ ] Eligibility checking for specific patients
-- [ ] Export to standard formats (CDISC, FHIR)
-- [ ] Integration with ClinicalTrials.gov
-- [ ] Batch processing capabilities
+- [ ] ProtocolLens MCP server (FastMCP)
+- [ ] GxP-style audit trail of agent decisions
+- [ ] ICH/FDA guidance documents as MCP resources
 
----
+## Background
 
-**Made with ❤️ using Google Gemini AI**
+ProtocolLens started as a Gemini API hackathon project for protocol PDF analysis. It is built by a bioanalytical scientist with over ten years in GxP-regulated drug development, which shapes two design choices: conclusions must be traceable to source text, and the system must say "unknown" when the evidence is not there.
+
+## License
+
+<!-- Add a license, e.g. MIT -->
