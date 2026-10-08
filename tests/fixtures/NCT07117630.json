@@ -1,0 +1,424 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT07117630",
+      "orgStudyIdInfo": {
+        "id": "SCHBCC-N096"
+      },
+      "organization": {
+        "fullName": "Fudan University",
+        "class": "OTHER"
+      },
+      "briefTitle": "An Open-Label, Bayesian Adaptive Phase II Clinical Study in HR+/HER2- Advanced Breast Cancer After Progression on Standard Therapy",
+      "officialTitle": "An Open-Label, Bayesian Adaptive Phase II Clinical Study in HR+/HER2- Advanced Breast Cancer After Progression on Standard Therapy"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2026-07",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-09-25",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2027-06",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2027-12",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2025-07-29",
+      "studyFirstSubmitQcDate": "2025-08-11",
+      "studyFirstPostDateStruct": {
+        "date": "2025-08-12",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-07-10",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-07-13",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "PRINCIPAL_INVESTIGATOR",
+        "investigatorFullName": "Zhimin Shao",
+        "investigatorTitle": "Professor",
+        "investigatorAffiliation": "Fudan University"
+      },
+      "leadSponsor": {
+        "name": "Fudan University",
+        "class": "OTHER"
+      }
+    },
+    "oversightModule": {
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "This is a prospective, Phase II, open-label, two-arm parallel study evaluating the efficacy and safety of combined treatment (L-Ornithine L-Aspartate, N-Acetylcysteine) with CDK4/6 inhibitors and Fulvestrant in patients with HR-positive/HER2-negative advanced breast cancer (ABC) who have progressed on prior standard therapy including CDK4/6 inhibitors and endocrine therapy."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Breast Cancer"
+      ]
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+        "PHASE2"
+      ],
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": {
+          "masking": "NONE"
+        }
+      },
+      "enrollmentInfo": {
+        "count": 60,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "CDK4/6 inhibitor + Fulvestrant + L-Ornithine L-Aspartate",
+          "type": "EXPERIMENTAL",
+          "interventionNames": [
+            "Drug: L-Ornithine L-Aspartate",
+            "Drug: CDK4/6 inhibitor",
+            "Drug: Fulvestrant"
+          ]
+        },
+        {
+          "label": "CDK4/6 inhibitor + Fulvestrant + N-Acetylcysteine",
+          "type": "EXPERIMENTAL",
+          "interventionNames": [
+            "Drug: CDK4/6 inhibitor",
+            "Drug: Fulvestrant",
+            "Drug: N-Acetylcysteine (NAC) Treatment"
+          ]
+        },
+        {
+          "label": "PARP inhibitor + Fulvestrant + Pioglitazone",
+          "type": "EXPERIMENTAL",
+          "interventionNames": [
+            "Drug: Fulvestrant",
+            "Drug: Pioglitazone (PIO)",
+            "Drug: PARP inhibitor"
+          ]
+        }
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "L-Ornithine L-Aspartate",
+          "description": "3g orally three times daily",
+          "armGroupLabels": [
+            "CDK4/6 inhibitor + Fulvestrant + L-Ornithine L-Aspartate"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "CDK4/6 inhibitor",
+          "description": "at the physician's choice",
+          "armGroupLabels": [
+            "CDK4/6 inhibitor + Fulvestrant + L-Ornithine L-Aspartate",
+            "CDK4/6 inhibitor + Fulvestrant + N-Acetylcysteine"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Fulvestrant",
+          "description": "500mg IM on Days 1 \\& 15 of Cycle 1, then Day 1 of subsequent cycles",
+          "armGroupLabels": [
+            "CDK4/6 inhibitor + Fulvestrant + L-Ornithine L-Aspartate",
+            "CDK4/6 inhibitor + Fulvestrant + N-Acetylcysteine",
+            "PARP inhibitor + Fulvestrant + Pioglitazone"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "N-Acetylcysteine (NAC) Treatment",
+          "description": "600mg orally twice daily",
+          "armGroupLabels": [
+            "CDK4/6 inhibitor + Fulvestrant + N-Acetylcysteine"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Pioglitazone (PIO)",
+          "description": "30mg orally once daily",
+          "armGroupLabels": [
+            "PARP inhibitor + Fulvestrant + Pioglitazone"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "PARP inhibitor",
+          "description": "at the physician's choice",
+          "armGroupLabels": [
+            "PARP inhibitor + Fulvestrant + Pioglitazone"
+          ]
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Objective Response Rate (ORR)",
+          "timeFrame": "Baseline until disease progression or loss of clinical benefit, assessed up to 6 months"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Disease Control Rate (DCR)",
+          "timeFrame": "Baseline through end of study, assessed up to 6 months"
+        },
+        {
+          "measure": "Progression Free Survival (PFS)",
+          "timeFrame": "Randomization to death from any cause, through the end of study, assessed up to 6 months"
+        },
+        {
+          "measure": "Safety and treatment-related AEs (assessed by CTCAE v5.0)",
+          "description": "The total count and percentage of participants experiencing treatment-related AEs, classified by severity (Grades 1-5) according to CTCAE v5.0",
+          "timeFrame": "Randomization to death from any cause, through the end of study, assessed up to 12 months"
+        },
+        {
+          "measure": "Biomarker analysis",
+          "description": "Pre- and post-treatment samples (tumor tissue, blood, and feces) will be analyzed for blood ammonia levels, ammonia-related genes, cell functions, and microbes to predict therapy response",
+          "timeFrame": "Baseline until disease progression or loss of clinical benefit, assessed up to 6 months"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Women aged ≥ 18 years old.\n* Patients with histologically confirmed HR+/HER2- invasive breast cancer (specific definition: ER \\> 10% tumor cell positivity by immunohistochemistry is defined as ER positive, PR positive, PR \\> 10% tumor cell positivity is defined as PR positive; HER2 0 - 1+ or HER2 ++ but negative by FISH without amplification is defined as HER2 negative).\n* Patients with HR+/HER2- advanced breast cancer who have experienced disease progression after receiving systemic therapy including CDK4/6 inhibitors and endocrine therapy.\n* Patients whom the investigator judges to be suitable for continued endocrine therapy\n* Patients with at least one measurable lesion per RECIST version 1.1 criteria (≥ 20 mm on conventional CT scan, ≥ 10 mm on spiral CT scan, and without prior radiotherapy for measurable lesion).\n* Patients whose main organs function normally by meeting the following requirements:\n* Hematology criteria: HB ≥ 90 g/L (no blood transfusion within 14 days); ANC ≥ 1.5 × 109/L; PLT ≥ 75 × 109/L;\n* Blood chemistry criteria: TBIL ≤ 1.5 × ULN (upper limit of normal); ALT and AST ≤ 3 × ULN; if liver metastasis is present, then ALT and AST ≤ 5 × ULN; serum Cr ≤ 1× ULN, endogenous creatinine clearance \\> 50 mL/min (Cockcroft-Gault formula);\n* Patients who have not received radiotherapy, molecular targeted therapy, or surgery within 3 weeks prior to the start of the study and have recovered from acute toxicities of prior therapies (if a surgery has been undergone, the wound has completely healed); patients who have no peripheral neuropathy or Grade I peripheral neurotoxicity;\n* Patients with ECOG score ≤ 2, and life expectancy ≥ 3 months;\n* Female subjects of childbearing potential are required to use a medically acceptable method of contraception during study treatment and for at least 3 months after the last dose of study drug;\n* Subjects will be enrolled in this study voluntarily, sign the informed consent form (ICF), have good compliance, and cooperate with follow-up.\n\nExclusion Criteria:\n\n* Patients who have received radiotherapy (except for palliative reasons), chemotherapy, immunotherapy, or bisphosphonates (except for bone metastases) within 3 weeks prior to treatment.\n* Patients with uncontrolled central nervous system metastases (defined as symptomatic or requiring the use of corticosteroids or mannitol to control symptoms).\n* Patients with a history of clinically important or uncontrolled heart disease, including congestive heart failure, angina pectoris, myocardial infarction within the past 6 months, or ventricular arrhythmia.\n* Patients with ongoing ARs ≥ Grade 1 due to prior therapy. Exception to this is alopecia or those that, in the opinion of the investigator, should not be excluded. Such cases should be clearly documented in the investigator's notes.\n* Patients who have undergone major surgery (except for minor outpatient surgery, such as placement of vascular access) within 3 weeks of the first course of study treatment.\n* Pregnant or lactating patients.\n* Patients with a history of malignancy (except for cured basal cell carcinoma of the skin and carcinoma in situ of the cervix) within the past five years.\n* Inability to swallow, chronic diarrhea and intestinal obstruction, there are multiple factors affecting the taking and absorption of drugs.\n* Presence of a third space effusion (such as large pleural fluid and ascites) that cannot be controlled by drainage or other methods.\n* Long-term unhealed wounds or incompletely healed fractures.\n* Patients with known HBV or HCV infection active phase or hepatitis B DNA ≥ 500, or chronic phase with abnormal liver function.\n* Those with allergies, or those who are known to have a history of allergy to the drug components of this study.\n* For the Experimental: PARP inhibitor + Fulvestrant + Pioglitazone arm , patients with pathogenic germline BRCA1/2 mutations.",
+      "healthyVolunteers": false,
+      "sex": "FEMALE",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Zhiming Shao, Professor",
+          "role": "CONTACT",
+          "phone": "08664175590",
+          "phoneExt": "88807",
+          "email": "zhimin_shao@yeah.net"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Fudan University Shanghai Cancer Center",
+          "status": "RECRUITING",
+          "city": "Shanghai",
+          "zip": "200032",
+          "country": "China",
+          "contacts": [
+            {
+              "name": "Zhonghua Wang, Professor",
+              "role": "CONTACT",
+              "phone": "8664175590",
+              "phoneExt": "88807",
+              "email": "zhonghuawang95@hotmail.com"
+            }
+          ],
+          "geoPoint": {
+            "lat": 31.22222,
+            "lon": 121.45806
+          }
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D001943",
+          "term": "Breast Neoplasms"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D001941",
+          "term": "Breast Diseases"
+        },
+        {
+          "id": "D012871",
+          "term": "Skin Diseases"
+        },
+        {
+          "id": "D017437",
+          "term": "Skin and Connective Tissue Diseases"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C002939",
+          "term": "ornithylaspartate"
+        },
+        {
+          "id": "D000077267",
+          "term": "Fulvestrant"
+        },
+        {
+          "id": "D000111",
+          "term": "Acetylcysteine"
+        },
+        {
+          "id": "D013812",
+          "term": "Therapeutics"
+        },
+        {
+          "id": "D000077205",
+          "term": "Pioglitazone"
+        },
+        {
+          "id": "D000067856",
+          "term": "Poly(ADP-ribose) Polymerase Inhibitors"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D004958",
+          "term": "Estradiol"
+        },
+        {
+          "id": "D004963",
+          "term": "Estrenes"
+        },
+        {
+          "id": "D004962",
+          "term": "Estranes"
+        },
+        {
+          "id": "D013256",
+          "term": "Steroids"
+        },
+        {
+          "id": "D000072473",
+          "term": "Fused-Ring Compounds"
+        },
+        {
+          "id": "D011083",
+          "term": "Polycyclic Compounds"
+        },
+        {
+          "id": "D045166",
+          "term": "Estradiol Congeners"
+        },
+        {
+          "id": "D012739",
+          "term": "Gonadal Steroid Hormones"
+        },
+        {
+          "id": "D042341",
+          "term": "Gonadal Hormones"
+        },
+        {
+          "id": "D006728",
+          "term": "Hormones"
+        },
+        {
+          "id": "D006730",
+          "term": "Hormones, Hormone Substitutes, and Hormone Antagonists"
+        },
+        {
+          "id": "D003545",
+          "term": "Cysteine"
+        },
+        {
+          "id": "D000603",
+          "term": "Amino Acids, Sulfur"
+        },
+        {
+          "id": "D013457",
+          "term": "Sulfur Compounds"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D000596",
+          "term": "Amino Acids"
+        },
+        {
+          "id": "D000602",
+          "term": "Amino Acids, Peptides, and Proteins"
+        },
+        {
+          "id": "D045162",
+          "term": "Thiazolidinediones"
+        },
+        {
+          "id": "D013844",
+          "term": "Thiazoles"
+        },
+        {
+          "id": "D001393",
+          "term": "Azoles"
+        },
+        {
+          "id": "D006573",
+          "term": "Heterocyclic Compounds, 1-Ring"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D004791",
+          "term": "Enzyme Inhibitors"
+        },
+        {
+          "id": "D045504",
+          "term": "Molecular Mechanisms of Pharmacological Action"
+        },
+        {
+          "id": "D020228",
+          "term": "Pharmacologic Actions"
+        },
+        {
+          "id": "D020164",
+          "term": "Chemical Actions and Uses"
+        },
+        {
+          "id": "D000970",
+          "term": "Antineoplastic Agents"
+        },
+        {
+          "id": "D045506",
+          "term": "Therapeutic Uses"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

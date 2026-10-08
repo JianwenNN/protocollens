@@ -1,0 +1,306 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT03193892",
+      "orgStudyIdInfo": {
+        "id": "2016YFC091502LAM"
+      },
+      "organization": {
+        "fullName": "Peking Union Medical College Hospital",
+        "class": "OTHER"
+      },
+      "briefTitle": "A National Registry on Chinese Patients With Lymphangioleiomyomatosis",
+      "officialTitle": "A National Registry on Clinical Manifestations, Genetics, Interventions, and Outcomes in Chinese Patients With Lymphangioleiomyomatosis (LAM-CHINA)"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2021-09",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2017-01-01",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2026-10-01",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2026-10-01",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2017-06-14",
+      "studyFirstSubmitQcDate": "2017-06-18",
+      "studyFirstPostDateStruct": {
+        "date": "2017-06-21",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2021-09-18",
+      "lastUpdatePostDateStruct": {
+        "date": "2021-09-24",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Peking Union Medical College Hospital",
+        "class": "OTHER"
+      },
+      "collaborators": [
+        {
+          "name": "Shanghai Zhongshan Hospital",
+          "class": "OTHER"
+        },
+        {
+          "name": "Guangzhou Institute of Respiratory Disease",
+          "class": "OTHER"
+        },
+        {
+          "name": "Central South University",
+          "class": "OTHER"
+        },
+        {
+          "name": "Anhui Provincial Hospital",
+          "class": "OTHER_GOV"
+        },
+        {
+          "name": "Xiangya Hospital of Central South University",
+          "class": "OTHER"
+        },
+        {
+          "name": "The Affiliated Nanjing Drum Tower Hospital of Nanjing University Medical School",
+          "class": "OTHER"
+        },
+        {
+          "name": "Wuxi People's Hospital",
+          "class": "OTHER"
+        },
+        {
+          "name": "Beijing Shijitan Hospital, Capital Medical University",
+          "class": "OTHER"
+        },
+        {
+          "name": "West China Hospital",
+          "class": "OTHER"
+        },
+        {
+          "name": "Fujian Provincial Hospital",
+          "class": "OTHER"
+        },
+        {
+          "name": "Wuhan TongJi Hospital",
+          "class": "OTHER"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true,
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "Pulmonary lymphangioleiomyomatosis (LAM), a disease characterized by diffuse cystic changes in the lung, is a rare disorder that affects almost exclusively women. The main objectives of this study are to accurately evaluate the prevalence of LAM, the status of disease, the diagnosis and treatment, the quality of care, and the health related outcomes in China.",
+      "detailedDescription": "Pulmonary lymphangioleiomyomatosis (LAM), a disease characterized by diffuse cystic changes in the lung, is a rare disorder that affects almost exclusively women. The main objectives of this study are to accurately evaluate the prevalence of LAM, the status of disease, the diagnosis and treatment, the quality of care, and the health related outcomes in China. This is a register study lasting 4 years, aims to raise 800 subjects. Primary endpoint is the annual change of forced expiratory volume in the first second (FEV1) and forced vital capacity (FVC) in pulmonary function tests."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Pulmonary Function"
+      ],
+      "keywords": [
+        "registry",
+        "China",
+        "lymphangioleiomyomatosis"
+      ]
+    },
+    "designModule": {
+      "studyType": "OBSERVATIONAL",
+      "patientRegistry": true,
+      "targetDuration": "10 Years",
+      "designInfo": {
+        "observationalModel": "COHORT",
+        "timePerspective": "PROSPECTIVE"
+      },
+      "bioSpec": {
+        "retention": "SAMPLES_WITH_DNA",
+        "description": "Biological specimens are preserved in serum, plasma, and leukocytes"
+      },
+      "enrollmentInfo": {
+        "count": 1500,
+        "type": "ESTIMATED"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Change in spirometry (FEV1 and FVC) of lymphangioleiomyomatosis patients.",
+          "description": "Spirometry will be evaluated at baseline and through study completion, an average of 3 years.",
+          "timeFrame": "10 years"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Change of diffusing capacity of the lung.",
+          "description": "Pulmonary function tests will be evaluated at baseline and through study completion, an average of 3 years.",
+          "timeFrame": "10 years"
+        },
+        {
+          "measure": "Annual incidence of major health outcomes: hemoptysis, pneumothorax, chylothorax, and spontaneous hemorrhage of kidney angiomyolipoma (AML).",
+          "description": "The number of occurrences will be recorded through study completion, an average of 3 years.",
+          "timeFrame": "10 years"
+        },
+        {
+          "measure": "Other health outcomes: pregnancy, malignant tumors except LAM, lung transplantation, and death.",
+          "description": "The number of occurrences will be recorded through study completion, an average of 3 years.",
+          "timeFrame": "10 year"
+        },
+        {
+          "measure": "The incidence of adverse drug reactions of long-time treatment with rapamycin.",
+          "description": "Common Terminology Criteria for Adverse Events (CTCAE) will be used to evaluate adverse drug reactions through study completion, an average of 3 years.",
+          "timeFrame": "10 years"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n1. Gender: female.\n2. Age: no limitation.\n3. Diagnosis meets one of the following criteria, (1) definite or probable diagnosis of LAM based on ATS/JRS and ERS criteria. (2) Investigators recommend including of the patient.\n\nExclusion Criteria:\n\n1. Suspected LAM patients without other supporting evidence for LAM diagnosis.\n2. No diffuse cystic lesions in the lung.\n3. Patients with bilateral cystic lung lesions but the LAM diagnosis cannot be established.\n4. Without signed informed consent.\n5. Difficult to follow up.",
+      "healthyVolunteers": false,
+      "sex": "FEMALE",
+      "genderBased": true,
+      "genderDescription": "Pulmonary lymphangioleiomyomatosis (LAM) affects almost exclusively women.",
+      "stdAges": [
+        "CHILD",
+        "ADULT",
+        "OLDER_ADULT"
+      ],
+      "studyPopulation": "Study Population is from across the country of China.",
+      "samplingMethod": "PROBABILITY_SAMPLE"
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Kai-Feng Xu, M.D.",
+          "role": "CONTACT",
+          "phone": "86-10-69155039",
+          "email": "xukf@pumch.cn"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Peking Union Medical College Hospital",
+          "status": "RECRUITING",
+          "city": "Beijing",
+          "state": "Beijing Municipality",
+          "zip": "100730",
+          "country": "China",
+          "contacts": [
+            {
+              "name": "Kai-Feng Xu, M.D.",
+              "role": "CONTACT",
+              "phone": "86-10-69155039",
+              "email": "xukf@pumch.cn"
+            },
+            {
+              "name": "XinLun Tian, M.D.",
+              "role": "CONTACT",
+              "phone": "86-10-69155039",
+              "email": "xinlun_t@sina.com"
+            },
+            {
+              "name": "Xinlun Tian, M.D.",
+              "role": "SUB_INVESTIGATOR"
+            },
+            {
+              "name": "Kai-Feng Xu, M.D.",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 39.9075,
+            "lon": 116.39723
+          }
+        }
+      ]
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "pmid": "39148107",
+          "type": "DERIVED",
+          "citation": "Wang YY, Zou LP, Xu KF, Xu WS, Zhang MN, Lu Q, Tian XL, Pang LY, He W, Wang QH, Gao Y, Liu LY, Chen XQ, Ma SF, Chen HM, Dun S, Yang XY, Luo XM, Huang LL, Li YF. Long-term safety and influence on growth in patients receiving sirolimus: a pooled analysis. Orphanet J Rare Dis. 2024 Aug 15;19(1):299. doi: 10.1186/s13023-024-03243-5."
+        },
+        {
+          "pmid": "36801466",
+          "type": "DERIVED",
+          "citation": "Xu W, Yang C, Cheng C, Wang Y, Hu D, Huang J, He Y, Wang J, Chen K, Yang L, Zhou W, Zhang T, Liu S, Dai J, Meng S, Li X, Yang Y, Wang ST, Feng R, Zhang W, Zhang H, Wang L, Tian X, Xu KF. Determinants of Progression and Mortality in Lymphangioleiomyomatosis. Chest. 2023 Jul;164(1):137-148. doi: 10.1016/j.chest.2023.02.026. Epub 2023 Feb 18."
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO",
+      "description": "Currently, there is no such a plan to share IPD to other researchers"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D018192",
+          "term": "Lymphangioleiomyomatosis"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D008203",
+          "term": "Lymphangiomyoma"
+        },
+        {
+          "id": "D018190",
+          "term": "Neoplasm, Lymphatic Tissue"
+        },
+        {
+          "id": "D009370",
+          "term": "Neoplasms by Histologic Type"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D054973",
+          "term": "Perivascular Epithelioid Cell Neoplasms"
+        },
+        {
+          "id": "D018204",
+          "term": "Neoplasms, Connective and Soft Tissue"
+        },
+        {
+          "id": "D008232",
+          "term": "Lymphoproliferative Disorders"
+        },
+        {
+          "id": "D008206",
+          "term": "Lymphatic Diseases"
+        },
+        {
+          "id": "D006425",
+          "term": "Hemic and Lymphatic Diseases"
+        },
+        {
+          "id": "D007160",
+          "term": "Immunoproliferative Disorders"
+        },
+        {
+          "id": "D007154",
+          "term": "Immune System Diseases"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

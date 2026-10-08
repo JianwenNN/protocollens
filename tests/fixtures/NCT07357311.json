@@ -1,0 +1,227 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT07357311",
+      "orgStudyIdInfo": {
+        "id": "IC 2025-08"
+      },
+      "organization": {
+        "fullName": "Institut Curie",
+        "class": "OTHER"
+      },
+      "briefTitle": "Screening and Care for Fear of Cancer Recurrence in Patients With Cancer at Institut Curie",
+      "officialTitle": "Fear of Cancer Recurrence: Prevalence, Lived Experience and Satisfaction of Supportive Care Needs in the Hospital Care Pathway. A Mixed Method Study.",
+      "acronym": "PDR-CARE"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2026-01",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-09-08",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2026-01-31",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2027-12-31",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2026-01-12",
+      "studyFirstSubmitQcDate": "2026-01-12",
+      "studyFirstPostDateStruct": {
+        "date": "2026-01-22",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-01-21",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-01-23",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Institut Curie",
+        "class": "OTHER"
+      }
+    },
+    "oversightModule": {
+      "oversightHasDmc": false,
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "The goals of this study is to establish the prevalence of severe forms of FCR in the oncology hospital setting, which will require a specific psychotherapeutic response. Two cancer sites are targeted: breast and pulmonary cancers. Secondary objectives include: 1) Determining threshold scores for the FCRI's 9-item severity scale for each type of cancer; 3) To identify a simple item from the FCRI for early detection of FCR in everyday clinical practice, especially using a digital format.",
+      "detailedDescription": "Context and scientific background Fear of cancer recurrence (FCR) is a common concern among cancer patients. It has a significant impact on patients' quality of life and can lead to inappropriate health behaviours, which can hinder treatment management and patient survival. A Delphi survey identified the steps needed to pursue research in the field of FCR, in particular understanding its manifestations in specific populations. It also involves perfecting and culturally validating screening tools for FCR to ensure accurate detection and equitable access to appropriate care when needed. The Fear of Recurrence Inventory (FCRI) is, to date, the most widely validated tool for measuring FCR. However, its clinical use is limited due to its length and the absence of established cut-off scores, particularly for French-speaking populations.\n\nProgresses in oncology mean that patients with advanced cancer can live longer. They differ from patients in remission and from terminally ill patients with an estimated life expectancy of less than a year. Therefore, their fears do not concern recurrence, but rather the progression of the disease. Their psychological state also differs from the concerns of end-of-life patients. Fear of progression is included in the definition of FCR (i.e. 'fear of worry that the cancer will return or progress. Yet fear of recurrence is seldom studied in patients with metastatic cancer. The aim is therefore to explore the specific features of the metastatic stage of the disease compared with the non-metastatic stage.\n\nMethodology / Questionnaires / Hypothesis This is a mixed-method study. 200 patients will be identified consecutively, three months after a breast or lung cancer treatment completion or three months after the start of a first line of treatment for a metastatic progression. Both these cancer types have been selected in order to ensure recruitment feasibility in this study, as they are the most frequently treated at the Institut Curie. Study will include 100 patients per cancer type. Semi-structured clinical interviews will be conducted with these patients after they have completed the FCRI. These interviews' analyses will enable us to classify patients according to their FCR levels. Based on this classification, threshold scores for high FCR will be assessed for their sensitivity and specificity for both the 9-item scale and a single item. More in-depths qualitative interviews will be carried out with a random sample of 40 of these patients, stratified by cancer type and stage, in order to explore their perceptions of the disease, the risk of recurrence, their cognitive, emotional and behavioural responses to this risk, and their internal and external psychological resources. Satisfaction will also be assessed with the psychological resources currently available to cope with FCR."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Lung Cancer",
+        "Breast Cancer"
+      ],
+      "keywords": [
+        "FCR",
+        "FoP",
+        "Lung cancer",
+        "Breast cancer"
+      ]
+    },
+    "designModule": {
+      "studyType": "OBSERVATIONAL",
+      "patientRegistry": false,
+      "designInfo": {
+        "observationalModel": "COHORT",
+        "timePerspective": "CROSS_SECTIONAL"
+      },
+      "enrollmentInfo": {
+        "count": 200,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "Lung cancer"
+        },
+        {
+          "label": "Breast cancer"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Proportion of patients scoring above a cut-off on the 9-item Fear of cancer recurrence inventory (FRCI) severity scale",
+          "description": "The proportion of patients scoring above a cut-off on the 9-item FRCI severity scale of the 'Fear of cancer recurrence inventory the (FCRI) (Simard \\& Savard, 2009), reflecting severe FCR and the need for specialised psycho-oncological care.",
+          "timeFrame": "Within 1 month after inclusion"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Emergent themes related to perceptions of cancer, fear of recurrence, psychological responses, and satisfaction with support resources.",
+          "description": "Semi-structured qualitative interviews with 40 stratified patients. Thematic analysis of cognitive, emotional, behavioural responses, and internal and external resources.",
+          "timeFrame": "Within 1 month after inclusion"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Aged 18 or over\n* Clinical or pathological diagnosis of primary or recurrence of a localized/loco-regional or metastatic breast cancer, or a stage 1 or 2, or stage 3 or 4 lung cancer; or a breast or lung cancer metastatic progression\n* Three months after completing treatment or three months after the start of a first treatment line for metastatic progression\n* Able to comply with the scheduled assessment and interviews\n* Able to read and understand the questionnaires' language (i.e. French)\n\nExclusion Criteria:\n\n* Participating in another patient-reported outcome study interfering with the present study\n* Any social, medical or psychological condition hindering questionnaire completion\n* Being deprived of personal liberty or under guardianship",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ],
+      "studyPopulation": "Patients with lung cancer or breast cancer at all stages of the disease, three months after treatment completion or three months after the start of a first treatment line for a metastatic progression.",
+      "samplingMethod": "NON_PROBABILITY_SAMPLE"
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Anne Bredart, Ph.D",
+          "role": "CONTACT",
+          "phone": "+33 1 44 32 43 50",
+          "email": "anne.bredart@curie.fr"
+        },
+        {
+          "name": "Carole Cagnot",
+          "role": "CONTACT",
+          "email": "carole.cagnot@curie.fr"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Institut Curie",
+          "status": "RECRUITING",
+          "city": "Paris",
+          "zip": "75005",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Anne Bredart, Ph.D",
+              "role": "CONTACT"
+            }
+          ],
+          "geoPoint": {
+            "lat": 48.85341,
+            "lon": 2.3488
+          }
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "YES",
+      "description": "Sponsor will share de-identified data sets. Documents generated under the project will be disseminated in accordance with Institut Curie policies",
+      "infoTypes": [
+        "STUDY_PROTOCOL",
+        "SAP"
+      ],
+      "timeFrame": "Data requests can be submitted starting 9 months after last article publication and will be made accessible for up to 12 months",
+      "accessCriteria": "Access to trial individual participant data can be requested by qualified researchers engaging in independent scientific research, and will be provided following review and approval of a research proposal and Statistical Analysis Plan (SAP) and execution of a data sharing agreement (DSA)."
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D008175",
+          "term": "Lung Neoplasms"
+        },
+        {
+          "id": "D001943",
+          "term": "Breast Neoplasms"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D012142",
+          "term": "Respiratory Tract Neoplasms"
+        },
+        {
+          "id": "D013899",
+          "term": "Thoracic Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D008171",
+          "term": "Lung Diseases"
+        },
+        {
+          "id": "D012140",
+          "term": "Respiratory Tract Diseases"
+        },
+        {
+          "id": "D001941",
+          "term": "Breast Diseases"
+        },
+        {
+          "id": "D012871",
+          "term": "Skin Diseases"
+        },
+        {
+          "id": "D017437",
+          "term": "Skin and Connective Tissue Diseases"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

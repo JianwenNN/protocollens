@@ -1,0 +1,343 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT07483112",
+      "orgStudyIdInfo": {
+        "id": "BASEC2025-00650"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "KFS-6039-02-2024",
+          "type": "OTHER_GRANT",
+          "domain": "Krebsforschung Schweiz"
+        },
+        {
+          "id": "Lungenliga Ost",
+          "type": "OTHER_GRANT",
+          "domain": "Lungenliga Ost"
+        },
+        {
+          "id": "Swiss Cancer Foundation",
+          "type": "OTHER_GRANT",
+          "domain": "Swiss Cancer Foundation"
+        },
+        {
+          "id": "Nestlé Health Science",
+          "type": "OTHER_GRANT",
+          "domain": "Nestlé Health Science"
+        }
+      ],
+      "organization": {
+        "fullName": "Cantonal Hospital of St. Gallen",
+        "class": "OTHER"
+      },
+      "briefTitle": "Fiber-Boost Randomized Controlled Trial",
+      "officialTitle": "Multicenter, Randomized, Controlled Trial to Study the Effects of a High-Fiber Dietary Intervention on ctDNA Clearance and the Microbial and Immunological Landscape in Patients With Advanced Non-Small Cell Lung Cancer Receiving PD-1/PD-L1-Targeted Monotherapy (Fiber-Boost)",
+      "acronym": "Fiber-Boost"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2025-10",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-10-07",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2027-12-31",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2027-12-31",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2026-03-16",
+      "studyFirstSubmitQcDate": "2026-03-16",
+      "studyFirstPostDateStruct": {
+        "date": "2026-03-19",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-03-16",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-03-19",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "PRINCIPAL_INVESTIGATOR",
+        "investigatorFullName": "Maximilian Boesch",
+        "investigatorTitle": "Principal Investigator",
+        "investigatorAffiliation": "Cantonal Hospital of St. Gallen"
+      },
+      "leadSponsor": {
+        "name": "Cantonal Hospital of St. Gallen",
+        "class": "OTHER"
+      }
+    },
+    "oversightModule": {
+      "oversightHasDmc": true,
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "In the present study 'Fiber-Boost', we investigate how a high-fiber diet affects the immunotherapy of advanced lung cancer and what effects it has on the gut microbiome (i.e., the bacteria in the gut) as well as the immune system. Study participants will be assigned to either a test group or a control group. Only patients in the test group will undergo a high-fiber diet. The study lasts 6 weeks per patient and will be conducted at 4 centers within Switzerland. A total of 42 patients are planned to be included in the study.",
+      "detailedDescription": "The activity of immune checkpoint blockade (ICB) mechanistically depends on the host microbiome and is manipulable through diet. In this study termed Fiber-Boost, we propose a multicenter trial of a supplement-based high-fiber diet (HFD) in non-small cell lung cancer (NSCLC) treated with first-line ICB monotherapy. Using a randomized, controlled design, we mechanistically explore the role of dietary fibers in cancer immunotherapy. Circulating tumor DNA (ctDNA) quantification as well as a rich pipeline of companion microbiome and immune profiling technologies will improve the understanding of the diet-microbiome-immune axis in therapeutic anticancer immunity and treatment response. The overarching goal is to elucidate novel therapeutic strategies for ICB sensitization in NSCLC using microbiome-centered, non-pharmaceutical interventions. Sex and gender dimensions are biologically not sufficiently relevant for the current study to merit corresponding stratification or analyses."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Non-Small Cell Carcinoma of Lung"
+      ],
+      "keywords": [
+        "non-small cell lung cancer",
+        "immunotherapy",
+        "high-fiber diet",
+        "microbiome"
+      ]
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+        "NA"
+      ],
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": {
+          "masking": "NONE"
+        }
+      },
+      "enrollmentInfo": {
+        "count": 42,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "High-fiber diet",
+          "type": "EXPERIMENTAL",
+          "description": "Patients in this arm will receive a high-fiber diet over the period of 6 weeks.",
+          "interventionNames": [
+            "Dietary Supplement: High-fiber diet"
+          ]
+        },
+        {
+          "label": "No high-fiber diet",
+          "type": "NO_INTERVENTION",
+          "description": "Patients in this arm will not receive an intervention and serve as control."
+        }
+      ],
+      "interventions": [
+        {
+          "type": "DIETARY_SUPPLEMENT",
+          "name": "High-fiber diet",
+          "description": "Patients in the intervention arm will receive a high-fiber diet through daily consumption of a defined amount of plant-based fibers from a commercial product.",
+          "armGroupLabels": [
+            "High-fiber diet"
+          ]
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "ctDNA clearance",
+          "description": "Fraction of patients achieving complete ctDNA clearance at 6 weeks",
+          "timeFrame": "6 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "ctDNA dynamics",
+          "description": "ctDNA dynamics over 6 weeks",
+          "timeFrame": "3 and 6 weeks"
+        },
+        {
+          "measure": "Radiological treatment response",
+          "description": "Objective radiological response (RECIST 1.1)",
+          "timeFrame": "6 weeks and 6 months"
+        },
+        {
+          "measure": "Disease control rate",
+          "description": "6-months disease control rate (non-progressive disease at 6 months)",
+          "timeFrame": "6 months"
+        },
+        {
+          "measure": "Microbiota dynamics",
+          "description": "Gut microbiota dynamics by shotgun metagenomics",
+          "timeFrame": "6 weeks"
+        },
+        {
+          "measure": "Systemic immune response",
+          "description": "Systemic immune response dynamics by high-dimensional flow cytometry",
+          "timeFrame": "6 months"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Age ≥18 years\n* Written informed consent according to Swiss law and ICH/GCP regulations before inclusion and prior to any trial-specific procedures\n* Histologically or cytologically confirmed NSCLC\n* Advanced or recurrent NSCLC not amenable to curative treatment\n* PD-L1 expression ≥50% (TPS) determined by an approved IHC test\n* No actionable genetic alterations in genes such as EGFR, ALK, ROS1, HER2, BRAF, RET, MET, NTRK\n* First-line palliative PD-1/PD-L1-targeted monotherapy at a 3-weekly schedule indicated per local investigator\n* Willingness and ability to undergo study interventions\n* ECOG performance status 0-2\n* Adequate organ function:\n* Hemoglobin ≥70 g/L, platelet count ≥50 G/L, granulocytes ≥1 G/L\n* Bilirubin, ALT, AST ≤3 x ULN\n* Glomerular filtration rate (Cockroft-Gault) ≥30 mL/min/1.73m²\n* Measurable or evaluable disease per RECIST 1.1\n* Patients with CNS metastases are eligible, provided there is no requirement for corticosteroids as therapy for CNS disease and no evidence of clinical progression\n* Women with child-bearing potential use effective contraception (two independent methods), are not currently pregnant or lactating, and agree to not become pregnant during the trial treatment and during 3 months thereafter. A negative pregnancy test in either urine or blood is required for women with child-bearing potential before trial inclusion.\n* Men who are not sterile agree to use contraceptive methods (condoms) or abstain from sexual intercourse during the trial treatment and 3 months thereafter.\n\nExclusion Criteria:\n\n-History of malignancy, unless in remission for at least 3 years before inclusion with the exception of pT1-2 prostate cancer Gleason score \\<6, adequately treated cervical carcinoma in situ or localized non-melanoma skin cancer\n\nAdjuvant or additive systemic ICB treatment within 6 months prior to inclusion\n\n* Systemic treatment with an antibiotic within 10 days of ICB treatment/HFD intervention start\n* Concomitant immunosuppressive drugs including corticosteroids at a daily dose of ≥10mg prednisone equivalents, methotrexate, azathioprine, TNF-α inhibitors\n* Concurrent treatment with other experimental drugs or other anticancer therapy\n* Major surgical procedures within 14 days prior to inclusion as judged by the investigator\n* Active autoimmune disease requiring systemic immunosuppressive treatment that is seen as contraindication for the use of PD-1/PD-L1-targeted monoclonal antibodies\n* Uncontrolled diabetes mellitus\n* Severe or uncontrolled cardiovascular disease\n* Any other serious underlying medical, psychiatric, psychological, familial or geographical condition, which in the judgment of the investigator may interfere with the planned staging, treatment and follow-up, affect patient compliance or place the patient at high risk from treatment-related complications\n* Had an allogeneic tissue/solid organ transplant\n* Ongoing supplementation with OptiFibre® or another fiber supplement",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Maximilian Boesch, Ph.D.",
+          "role": "CONTACT",
+          "phone": "0041714947143",
+          "email": "maximilian.boesch@h-och.ch"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Universitätsspital Basel",
+          "status": "NOT_YET_RECRUITING",
+          "city": "Basel",
+          "zip": "4031",
+          "country": "Switzerland",
+          "contacts": [
+            {
+              "name": "Geraldine Borer",
+              "role": "CONTACT",
+              "phone": "0041613287081",
+              "email": "g.borer@usb.ch"
+            }
+          ],
+          "geoPoint": {
+            "lat": 47.55839,
+            "lon": 7.57327
+          }
+        },
+        {
+          "facility": "Kantonsspital Graubünden",
+          "status": "NOT_YET_RECRUITING",
+          "city": "Chur",
+          "zip": "7000",
+          "country": "Switzerland",
+          "contacts": [
+            {
+              "name": "Gabriela Manetsch-Dalla Torre",
+              "role": "CONTACT",
+              "phone": "0041812566860",
+              "email": "gabriela.manetsch@ksgr.ch"
+            }
+          ],
+          "geoPoint": {
+            "lat": 46.84986,
+            "lon": 9.53287
+          }
+        },
+        {
+          "facility": "HOCH Health Ostschweiz, Cantonal Hospital St.Gallen",
+          "status": "RECRUITING",
+          "city": "Sankt Gallen",
+          "zip": "9007",
+          "country": "Switzerland",
+          "contacts": [
+            {
+              "name": "Maximilian Boesch, Ph.D.",
+              "role": "CONTACT",
+              "phone": "0041714947143",
+              "email": "maximilian.boesch@h-och.ch"
+            }
+          ],
+          "geoPoint": {
+            "lat": 47.42391,
+            "lon": 9.37477
+          }
+        },
+        {
+          "facility": "Kantonsspital Winterthur",
+          "status": "NOT_YET_RECRUITING",
+          "city": "Winterthur",
+          "zip": "8401",
+          "country": "Switzerland",
+          "contacts": [
+            {
+              "name": "Beatrice Brinkers",
+              "role": "CONTACT",
+              "phone": "0041522663655",
+              "email": "beatrice.brinkers@ksw.ch"
+            }
+          ],
+          "geoPoint": {
+            "lat": 47.50564,
+            "lon": 8.72413
+          }
+        }
+      ]
+    },
+    "referencesModule": {
+      "seeAlsoLinks": [
+        {
+          "label": "Related Info",
+          "url": "https://www.humanforschung-schweiz.ch/de/studiensuche/studien-detail/66671/translate/en/?cHash=f466a7cde7b41a00a9566a4000c57928"
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D002289",
+          "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D002283",
+          "term": "Carcinoma, Bronchogenic"
+        },
+        {
+          "id": "D001984",
+          "term": "Bronchial Neoplasms"
+        },
+        {
+          "id": "D008175",
+          "term": "Lung Neoplasms"
+        },
+        {
+          "id": "D012142",
+          "term": "Respiratory Tract Neoplasms"
+        },
+        {
+          "id": "D013899",
+          "term": "Thoracic Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D008171",
+          "term": "Lung Diseases"
+        },
+        {
+          "id": "D012140",
+          "term": "Respiratory Tract Diseases"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

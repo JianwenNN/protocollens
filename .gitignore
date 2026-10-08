@@ -22,12 +22,13 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.pyc
 
 # Virtual environments
 venv/
 ENV/
 env/
-.venv
+.venv/
 
 # IDE
 .vscode/
@@ -98,3 +99,5 @@ credentials.json
 *.pptx
 *.docx
 *.xlsx
+
+pre_test/

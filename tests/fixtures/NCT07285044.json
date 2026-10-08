@@ -1,0 +1,771 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT07285044",
+      "orgStudyIdInfo": {
+        "id": "MC250902"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "25-003171",
+          "type": "OTHER",
+          "domain": "Mayo Clinic Institutional Review Board"
+        }
+      ],
+      "organization": {
+        "fullName": "Mayo Clinic",
+        "class": "OTHER"
+      },
+      "briefTitle": "The Cancer Connected Access and Remote Expertise Beyond Walls Program to Provide In-Home Cancer Treatment and Improve Treatment Satisfaction in Cancer Patients Living in the Florida Panhandle and Surrounding Areas",
+      "officialTitle": "Cancer CARE (Connected Access and Remote Expertise) Beyond Walls - Pilot, Phase 2 Clinical Trial to Evaluate Administration of Cancer-Directed Therapy in the Patient's Homes Versus in Clinic in the Florida Panhandle and Surrounding Areas"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2026-09",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-12-18",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2027-05-15",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2027-05-15",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2025-12-09",
+      "studyFirstSubmitQcDate": "2025-12-09",
+      "studyFirstPostDateStruct": {
+        "date": "2025-12-16",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-09-29",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-09-30",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Mayo Clinic",
+        "class": "OTHER"
+      }
+    },
+    "oversightModule": {
+      "oversightHasDmc": true,
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "This phase II trial studies whether providing cancer treatment in the home is preferred over the traditional clinic setting and if it improves treatment satisfaction in cancer patients living in the Florida Panhandle and surrounding areas. Typically, drug-related cancer care is provided at a medical center which causes patients to have to spend considerable time away from their family, friends, and familiar surroundings. This may add to the physical, emotional, social, and financial burden for patients and their families during this difficult time in their lives. The Cancer Connected Access and Remote Expertise (CARE) Beyond Walls (CCBW) program uses a specialized care team trained to provide cancer treatment in the patient's home setting. It is designed to support remote connection between the home health team and providers and Mayo clinic. This may be preferred over the traditional clinic setting which may improve treatment satisfaction in cancer patients living in the Florida Panhandle and surrounding areas."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Amyloidosis",
+        "Basal Cell Carcinoma",
+        "Biliary Tract Carcinoma",
+        "Bladder Carcinoma",
+        "Breast Carcinoma",
+        "Cervical Carcinoma",
+        "Colorectal Carcinoma",
+        "Endometrial Carcinoma",
+        "Fallopian Tube Carcinoma",
+        "Gastroesophageal Junction Carcinoma",
+        "Glioblastoma",
+        "Head and Neck Carcinoma",
+        "Hematopoietic and Lymphatic System Neoplasm",
+        "Hepatocellular Carcinoma",
+        "Hodgkin Lymphoma",
+        "Lung Carcinoma",
+        "Malignant Solid Neoplasm",
+        "Mantle Cell Lymphoma",
+        "Melanoma",
+        "Merkel Cell Carcinoma",
+        "Multiple Myeloma",
+        "Myelodysplastic Syndrome",
+        "Ovarian Carcinoma",
+        "Pancreatic Carcinoma",
+        "Primary Peritoneal Carcinoma",
+        "Prostate Carcinoma",
+        "Renal Cell Carcinoma",
+        "Squamous Cell Carcinoma",
+        "Urothelial Carcinoma"
+      ]
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+        "PHASE2"
+      ],
+      "designInfo": {
+        "allocation": "NA",
+        "interventionModel": "SINGLE_GROUP",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": {
+          "masking": "NONE"
+        }
+      },
+      "enrollmentInfo": {
+        "count": 27,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "Health services research (CCBW in-home cancer treatment)",
+          "type": "EXPERIMENTAL",
+          "description": "Patients receive in-home standard of care cancer-treatment through CCBW according to standard clinical practice for up to 12 weeks in the absence of disease progression or unacceptable toxicity. Following 12 weeks of in-home treatment, patients choose to return to clinic setting or continue to receive in-home treatment for an additional 12 weeks.",
+          "interventionNames": [
+            "Drug: Cancer Therapeutic Procedure",
+            "Other: Questionnaire Administration"
+          ]
+        }
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "Cancer Therapeutic Procedure",
+          "description": "Receive in-home standard of care cancer-treatment",
+          "armGroupLabels": [
+            "Health services research (CCBW in-home cancer treatment)"
+          ],
+          "otherNames": [
+            "anticancer therapy",
+            "Cancer Therapy",
+            "Cancer Treatment",
+            "Malignant Neoplasm Therapy",
+            "Malignant Neoplasm Treatment"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Cancer Therapeutic Procedure",
+          "description": "Receive in-clinic standard of care cancer-treatment",
+          "armGroupLabels": [
+            "Health services research (CCBW in-home cancer treatment)"
+          ],
+          "otherNames": [
+            "anticancer therapy",
+            "Cancer Therapy",
+            "Cancer Treatment",
+            "Malignant Neoplasm Therapy",
+            "Malignant Neoplasm Treatment"
+          ]
+        },
+        {
+          "type": "OTHER",
+          "name": "Questionnaire Administration",
+          "description": "Ancillary studies",
+          "armGroupLabels": [
+            "Health services research (CCBW in-home cancer treatment)"
+          ]
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Patient preferences regarding location of cancer treatment delivery",
+          "description": "As assessed by a single item asking patients to rate their preferred location for cancer treatment delivery on a 1 to 7 scale: 1 = strongly prefer in clinic, 2 = moderately prefer in clinic, 3 = slightly prefer in clinic, 4 = no preference, 5 = slightly prefer at home, 6 = moderately prefer at home, 7 = strongly prefer at home. Patients who receive any care in the mobile unit will be instructed to consider \"at home\" to mean receipt of care inside their home or near their home in the mobile unit.",
+          "timeFrame": "At 12 weeks"
+        },
+        {
+          "measure": "Adverse Events Related to Location of Treatment",
+          "description": "Safety of at-home administration of cancer treatment will be assessed by incidence of grade 3+ adverse events at least possibly related to the location of cancer treatment delivery that occur up to 30 days after the administration of the last dose of study drug/agent or therapy. The maximum grade for each type of adverse event will be summarized using Common Terminology Criteria for Adverse Events (CTCAE) version 5.0.",
+          "timeFrame": "Up to 9 months"
+        },
+        {
+          "measure": "Incidence of avoidable acute care visits, emergency room visits, and hospitalizations",
+          "description": "Safety of at-home administration of cancer treatment will be assessed by the frequency and proportion of patients who experience an avoidable (in the opinion of the treating physician) acute care visit, emergency room visit, or hospitalization while receiving at-home cancer treatment.",
+          "timeFrame": "Up to 24 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Change in Patient-reported Function - EORTC-QLQ-F17",
+          "description": "Assessed using the 15 function-related questions from the European Organization for Research and Treatment of Cancer (EORTC) Quality of Life Questionnaire (QLQ)-F17. The F17 is an abbreviated version of the EORTC-QLQ-C30 questionnaire (30 questions), which is used to assess the quality of life of cancer patients. The F17 is composed solely of items related to function. It also includes two questions related to health status and quality of life (QOL). Fifteen function questions are answered on a scale of 1-4 (1=not at all, 2=a little, 3=quite a bit, 4= very much), and two health/QOL questions are answered on a scale of 1-7 where 1= very poor and 7=excellent. Higher summary scores indicate greater overall function and better health related quality of life.",
+          "timeFrame": "Baseline, week 12, and week 24"
+        },
+        {
+          "measure": "Change in Patient-reported Global Health/Quality of Life - EORTC-QLQ-F17",
+          "description": "Assessed by two questions from the EORTC-QLQ-F17 related to Global Health Status/Quality of Life (QL) scale. These questions are answered on a scale of 1-7 where 1= very poor and 7=excellent. Higher summary scores indicate better health related quality of life.",
+          "timeFrame": "Baseline, week 12, and week 24"
+        },
+        {
+          "measure": "Patient-reported Symptoms - PRO-CTCAE",
+          "description": "As measured by the Patient Reported Outcomes (PRO) version of the Common Terminology Criteria for Adverse Events (CTCAE). PRO-CTCAE scores will be summarized using composite scores. The PRO-CTCAE was developed to assess patient self-reported symptoms in cancer clinical trials. The PRO-CTCAE consists of 27 questions related to symptoms and side effects experienced over the past 7 days. Each question is answered on a 5-point scale (e.g., none/mild/moderate/severe/very severe or never/rarely/occasionally/frequently/almost constantly). The final question is an opportunity to list any other symptoms not included in the assessment. Higher scores indicate experience of worse or more frequent/severe symptoms and side effects.",
+          "timeFrame": "At baseline, week 12, and week 24"
+        },
+        {
+          "measure": "Patient-reported Symptoms - FACT GP5",
+          "description": "As measured by the Functional Assessment of Cancer Therapy General 5 (FACT GP 5), a single question evaluating how much participants were bothered by treatment side effects over the past 7 days. The question is answered on a scale of 0-4, where 0=not at all, 1=a little bit, 2-somewhat, 3-quite a bit, and 4=very much.",
+          "timeFrame": "Baseline, week 12, and week 24"
+        },
+        {
+          "measure": "Patient-reported Satisfaction - Patient Satisfaction & Feedback",
+          "description": "As measured by the Patient Satisfaction and Feedback Questionnaire developed for this study. Patient responses will be summarized descriptively. The frequency and proportion of patients who express comfort receiving their cancer treatment at home (i.e., response of \"quite a bit\" or \"very much\") will be reported.",
+          "timeFrame": "12 weeks, 24 weeks"
+        },
+        {
+          "measure": "Patient-reported Satisfaction - Was It Worth It",
+          "description": "As measured by the 6-item Was It Worth It Questionnaire, which asks patients whether they thought that receiving cancer care at home was worthwhile, whether they would do it again, and whether they would recommend it to others. The patient is also asked whether care at home changed their quality of life and whether the experience was as expected. The patient will also have an opportunity to provide a free-text response about anything they recommend be changed to improve their experience. Responses will be summarized descriptively.",
+          "timeFrame": "12 weeks, 24 weeks"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Patient has had adequate tolerability of their clinical standard of care treatment, in the opinion of their treating physician, and no clinically significant drug-related reactions occurred prior to consent\n* Participant must be receiving a standard-of-care treatment regimen listed in this protocol that is being used in accordance with standard medical practice. Specifically, it must be either a) Food and Drug Administration (FDA)-approved for the participant's disease indication, or b) recommended in nationally recognized professional guidelines (e.g. National Comprehensive Cancer Network \\[NCCN\\], American Society of Clinical Oncology \\[ASCO\\], American Society of Hematology \\[ASH\\], etc.) as standard of care for the disease indication. Off-label use is permitted only if supported by such guidelines\n* A social stability screener, used per standard of care, indicates patient is appropriate to participate in the CCBW program\n* Eastern Cooperative Oncology Group (ECOG) performance status (PS) 0, 1, 2 or 3 at the discretion of the treating physician\n* Female or male patients age \\>= 18 years at the time of consent\n* Willing and able to comply with the study protocol in the investigator's judgement\n* Patients with histologically confirmed malignancy who are currently receiving treatment with one of the eligible treatment regimens. Patients with hepatocellular carcinoma (HCC) are eligible based on imaging diagnosis alone: histologic confirmation is not required.\n\n  * Note: patients diagnosed with any of the following disease types may receive any of the eligible regimens listed. Additionally, patients receiving hormonal or immunotherapy, such as nivolumab or pembrolizumab, may receive these infusions in home supplemental to any of the regimens identified. Co-administration with hormonal agents such as anti-androgens, poly(ADP-ribose) polymerase (PARP) inhibitors, oral gonadotrophin releasing hormone (GnRh) antagonists, estrogens, selective estrogen receptor modulators (SERMs), or aromatase inhibitors are allowed, however combinations of oral regimens only are not permitted. Patients may receive any combination of any listed medications or regimens\n  * Eligible disease cancer types:\n\n    * Amyloidosis\n    * Basal cell carcinoma\n    * Biliary\n    * Bladder\n    * Breast\n    * Cervical\n    * Colorectal\n    * Endometrial\n    * Fallopian tube\n    * Gastroesophageal\n    * Glioblastoma\n    * Head and neck\n    * Hepatocellular\n    * Hodgkin lymphoma\n    * Lung\n    * Mantle cell lymphoma\n    * Merkle cell carcinoma\n    * Multiple myeloma\n    * Melanoma\n    * Myelodysplastic syndrome\n    * Ovarian\n    * Pancreatic\n    * Peritoneal\n    * Prostate\n    * Renal cell carcinoma\n    * Squamous cell carcinoma\n    * Urothelial carcinoma\n  * Eligible regimens\n\n    * Atezolizumab +/- bevacizumab\n    * Avelumab\n    * Bevacizumab\n    * Bortezomib\n    * Cemiplimab\n    * Daratumumab +/- bortezomib\n    * Darbepoetin alpha\n    * Degarelix\n    * Denosumab (Xgeva)\n    * Durvalumab\n    * Fluorouracil +/- bevacizumab\n    * Fulvestrant\n    * Goserelin\n    * Ipilimumab +/- Nivolumab\n    * Lanreotide\n    * Leuprolide\n    * Nivolumab\n    * Nivolumab + relatlimab\n    * Octreotide\n    * Pembrolizumab\n    * Pertuzumab +/- trastuzumab\n    * Trastuzumab +/- pertuzumab\n    * Zoledronic acid (Zometa)\n* Willingness to follow birth control requirements for females and males of reproductive potential\n* Resides within the Florida Panhandle and surrounding area serviced by the at-home healthcare supplier utilized for the study and a paramedic network\n* Patient's residence has an existing Wi-Fi connection or can be connected using using a mobile Wi-Fi device provided as part of the program so as to enable a reliable connection with the remote CCBW Command Center at Mayo Clinic\n* Patients who, according to documentation from their treating provider, plan to continue the eligible treatment regimen they are currently prescribed for \\>= 12 weeks from the time of registration\n* Provide written informed consent\n* Ability to complete questionnaire(s) by themselves or with assistance\n* Willing to return to enrolling institution for follow-up (during the Active Monitoring Phase of the study)\n\nExclusion Criteria:\n\n* Co-morbid systemic illnesses or other severe concurrent disease which, in the judgment of the investigator, would make the patient inappropriate for entry into this study or interfere significantly with the proper assessment of safety and toxicity of the prescribed regimens\n* Receiving any investigational agent which would be considered as a treatment for the primary neoplasm.\n\n  * Note: oral concomitant medications for oncologic indications will be maintained per standard of care treatment and not considered part of the trial. Any nononcologic medication, regardless of route of administration will be maintained per standard of care treatment and also not considered part of the trial; therefore, patients receiving oral anti-cancer or other medications per standard of care treatment in addition to any of the medications listed are considered eligible for this trial\n* Individuals who require continuous (24/7) assistance with daily living and are unable to independently manage the technology required for study participation, unless a caregiver is available and willing to provide consistent support throughout the study\n* Current inpatient hospitalization (excluding admission to the Advanced Care at Home program)",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Clinical Trials Referral Office",
+          "role": "CONTACT",
+          "phone": "855-776-0015",
+          "email": "mayocliniccancerstudies@mayo.edu"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "name": "Roxana S. Dronca, MD",
+          "affiliation": "Mayo Clinic",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Mayo Clinic in Florida",
+          "status": "RECRUITING",
+          "city": "Jacksonville",
+          "state": "Florida",
+          "zip": "32224-9980",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Clinical Trials Referral Office",
+              "role": "CONTACT",
+              "phone": "855-776-0015",
+              "email": "mayocliniccancerstudies@mayo.edu"
+            },
+            {
+              "name": "Roxana S. Dronca, MD",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 30.33218,
+            "lon": -81.65565
+          }
+        }
+      ]
+    },
+    "referencesModule": {
+      "seeAlsoLinks": [
+        {
+          "label": "Mayo Clinic Clinical Trials",
+          "url": "https://www.mayo.edu/research/clinical-trials"
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D000686",
+          "term": "Amyloidosis"
+        },
+        {
+          "id": "D002280",
+          "term": "Carcinoma, Basal Cell"
+        },
+        {
+          "id": "D001749",
+          "term": "Urinary Bladder Neoplasms"
+        },
+        {
+          "id": "D001943",
+          "term": "Breast Neoplasms"
+        },
+        {
+          "id": "D002583",
+          "term": "Uterine Cervical Neoplasms"
+        },
+        {
+          "id": "D015179",
+          "term": "Colorectal Neoplasms"
+        },
+        {
+          "id": "D016889",
+          "term": "Endometrial Neoplasms"
+        },
+        {
+          "id": "D005185",
+          "term": "Fallopian Tube Neoplasms"
+        },
+        {
+          "id": "D005909",
+          "term": "Glioblastoma"
+        },
+        {
+          "id": "D006528",
+          "term": "Carcinoma, Hepatocellular"
+        },
+        {
+          "id": "D006689",
+          "term": "Hodgkin Disease"
+        },
+        {
+          "id": "D008175",
+          "term": "Lung Neoplasms"
+        },
+        {
+          "id": "D020522",
+          "term": "Lymphoma, Mantle-Cell"
+        },
+        {
+          "id": "D008545",
+          "term": "Melanoma"
+        },
+        {
+          "id": "D015266",
+          "term": "Carcinoma, Merkel Cell"
+        },
+        {
+          "id": "D009101",
+          "term": "Multiple Myeloma"
+        },
+        {
+          "id": "D009190",
+          "term": "Myelodysplastic Syndromes"
+        },
+        {
+          "id": "D010051",
+          "term": "Ovarian Neoplasms"
+        },
+        {
+          "id": "D010190",
+          "term": "Pancreatic Neoplasms"
+        },
+        {
+          "id": "D011471",
+          "term": "Prostatic Neoplasms"
+        },
+        {
+          "id": "D002292",
+          "term": "Carcinoma, Renal Cell"
+        },
+        {
+          "id": "D002294",
+          "term": "Carcinoma, Squamous Cell"
+        },
+        {
+          "id": "D002295",
+          "term": "Carcinoma, Transitional Cell"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D057165",
+          "term": "Proteostasis Deficiencies"
+        },
+        {
+          "id": "D008659",
+          "term": "Metabolic Diseases"
+        },
+        {
+          "id": "D009750",
+          "term": "Nutritional and Metabolic Diseases"
+        },
+        {
+          "id": "D002277",
+          "term": "Carcinoma"
+        },
+        {
+          "id": "D009375",
+          "term": "Neoplasms, Glandular and Epithelial"
+        },
+        {
+          "id": "D009370",
+          "term": "Neoplasms by Histologic Type"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D018295",
+          "term": "Neoplasms, Basal Cell"
+        },
+        {
+          "id": "D014571",
+          "term": "Urologic Neoplasms"
+        },
+        {
+          "id": "D014565",
+          "term": "Urogenital Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D052776",
+          "term": "Female Urogenital Diseases"
+        },
+        {
+          "id": "D005261",
+          "term": "Female Urogenital Diseases and Pregnancy Complications"
+        },
+        {
+          "id": "D000091642",
+          "term": "Urogenital Diseases"
+        },
+        {
+          "id": "D001745",
+          "term": "Urinary Bladder Diseases"
+        },
+        {
+          "id": "D014570",
+          "term": "Urologic Diseases"
+        },
+        {
+          "id": "D052801",
+          "term": "Male Urogenital Diseases"
+        },
+        {
+          "id": "D001941",
+          "term": "Breast Diseases"
+        },
+        {
+          "id": "D012871",
+          "term": "Skin Diseases"
+        },
+        {
+          "id": "D017437",
+          "term": "Skin and Connective Tissue Diseases"
+        },
+        {
+          "id": "D014594",
+          "term": "Uterine Neoplasms"
+        },
+        {
+          "id": "D005833",
+          "term": "Genital Neoplasms, Female"
+        },
+        {
+          "id": "D002577",
+          "term": "Uterine Cervical Diseases"
+        },
+        {
+          "id": "D014591",
+          "term": "Uterine Diseases"
+        },
+        {
+          "id": "D005831",
+          "term": "Genital Diseases, Female"
+        },
+        {
+          "id": "D000091662",
+          "term": "Genital Diseases"
+        },
+        {
+          "id": "D007414",
+          "term": "Intestinal Neoplasms"
+        },
+        {
+          "id": "D005770",
+          "term": "Gastrointestinal Neoplasms"
+        },
+        {
+          "id": "D004067",
+          "term": "Digestive System Neoplasms"
+        },
+        {
+          "id": "D004066",
+          "term": "Digestive System Diseases"
+        },
+        {
+          "id": "D005767",
+          "term": "Gastrointestinal Diseases"
+        },
+        {
+          "id": "D003108",
+          "term": "Colonic Diseases"
+        },
+        {
+          "id": "D007410",
+          "term": "Intestinal Diseases"
+        },
+        {
+          "id": "D012002",
+          "term": "Rectal Diseases"
+        },
+        {
+          "id": "D005184",
+          "term": "Fallopian Tube Diseases"
+        },
+        {
+          "id": "D000291",
+          "term": "Adnexal Diseases"
+        },
+        {
+          "id": "D001254",
+          "term": "Astrocytoma"
+        },
+        {
+          "id": "D005910",
+          "term": "Glioma"
+        },
+        {
+          "id": "D018302",
+          "term": "Neoplasms, Neuroepithelial"
+        },
+        {
+          "id": "D017599",
+          "term": "Neuroectodermal Tumors"
+        },
+        {
+          "id": "D009373",
+          "term": "Neoplasms, Germ Cell and Embryonal"
+        },
+        {
+          "id": "D009380",
+          "term": "Neoplasms, Nerve Tissue"
+        },
+        {
+          "id": "D000230",
+          "term": "Adenocarcinoma"
+        },
+        {
+          "id": "D008113",
+          "term": "Liver Neoplasms"
+        },
+        {
+          "id": "D008107",
+          "term": "Liver Diseases"
+        },
+        {
+          "id": "D008223",
+          "term": "Lymphoma"
+        },
+        {
+          "id": "D008232",
+          "term": "Lymphoproliferative Disorders"
+        },
+        {
+          "id": "D008206",
+          "term": "Lymphatic Diseases"
+        },
+        {
+          "id": "D006425",
+          "term": "Hemic and Lymphatic Diseases"
+        },
+        {
+          "id": "D007160",
+          "term": "Immunoproliferative Disorders"
+        },
+        {
+          "id": "D007154",
+          "term": "Immune System Diseases"
+        },
+        {
+          "id": "D012142",
+          "term": "Respiratory Tract Neoplasms"
+        },
+        {
+          "id": "D013899",
+          "term": "Thoracic Neoplasms"
+        },
+        {
+          "id": "D008171",
+          "term": "Lung Diseases"
+        },
+        {
+          "id": "D012140",
+          "term": "Respiratory Tract Diseases"
+        },
+        {
+          "id": "D008228",
+          "term": "Lymphoma, Non-Hodgkin"
+        },
+        {
+          "id": "D018358",
+          "term": "Neuroendocrine Tumors"
+        },
+        {
+          "id": "D018326",
+          "term": "Nevi and Melanomas"
+        },
+        {
+          "id": "D012878",
+          "term": "Skin Neoplasms"
+        },
+        {
+          "id": "D027601",
+          "term": "Polyomavirus Infections"
+        },
+        {
+          "id": "D004266",
+          "term": "DNA Virus Infections"
+        },
+        {
+          "id": "D014777",
+          "term": "Virus Diseases"
+        },
+        {
+          "id": "D007239",
+          "term": "Infections"
+        },
+        {
+          "id": "D014412",
+          "term": "Tumor Virus Infections"
+        },
+        {
+          "id": "D018278",
+          "term": "Carcinoma, Neuroendocrine"
+        },
+        {
+          "id": "D054219",
+          "term": "Neoplasms, Plasma Cell"
+        },
+        {
+          "id": "D020141",
+          "term": "Hemostatic Disorders"
+        },
+        {
+          "id": "D014652",
+          "term": "Vascular Diseases"
+        },
+        {
+          "id": "D002318",
+          "term": "Cardiovascular Diseases"
+        },
+        {
+          "id": "D010265",
+          "term": "Paraproteinemias"
+        },
+        {
+          "id": "D001796",
+          "term": "Blood Protein Disorders"
+        },
+        {
+          "id": "D006402",
+          "term": "Hematologic Diseases"
+        },
+        {
+          "id": "D006474",
+          "term": "Hemorrhagic Disorders"
+        },
+        {
+          "id": "D001855",
+          "term": "Bone Marrow Diseases"
+        },
+        {
+          "id": "D004701",
+          "term": "Endocrine Gland Neoplasms"
+        },
+        {
+          "id": "D010049",
+          "term": "Ovarian Diseases"
+        },
+        {
+          "id": "D004700",
+          "term": "Endocrine System Diseases"
+        },
+        {
+          "id": "D006058",
+          "term": "Gonadal Disorders"
+        },
+        {
+          "id": "D010182",
+          "term": "Pancreatic Diseases"
+        },
+        {
+          "id": "D005834",
+          "term": "Genital Neoplasms, Male"
+        },
+        {
+          "id": "D005832",
+          "term": "Genital Diseases, Male"
+        },
+        {
+          "id": "D011469",
+          "term": "Prostatic Diseases"
+        },
+        {
+          "id": "D007680",
+          "term": "Kidney Neoplasms"
+        },
+        {
+          "id": "D007674",
+          "term": "Kidney Diseases"
+        },
+        {
+          "id": "D018307",
+          "term": "Neoplasms, Squamous Cell"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D024221",
+          "term": "Antineoplastic Protocols"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D002985",
+          "term": "Clinical Protocols"
+        },
+        {
+          "id": "D013812",
+          "term": "Therapeutics"
+        },
+        {
+          "id": "D004358",
+          "term": "Drug Therapy"
+        },
+        {
+          "id": "D016020",
+          "term": "Epidemiologic Study Characteristics"
+        },
+        {
+          "id": "D017531",
+          "term": "Health Care Evaluation Mechanisms"
+        },
+        {
+          "id": "D011787",
+          "term": "Quality of Health Care"
+        },
+        {
+          "id": "D017530",
+          "term": "Health Care Quality, Access, and Evaluation"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

@@ -1,0 +1,192 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT06816121",
+      "orgStudyIdInfo": {
+        "id": "RAD-01"
+      },
+      "organization": {
+        "fullName": "Everest Detection, Inc.",
+        "class": "INDUSTRY"
+      },
+      "briefTitle": "Identification and Validation of Blood-Based Biomarkers for Early Detection of Asymptomatic Lung Cancer in High-Risk Heavy Smokers",
+      "officialTitle": "Identification and Validation of Blood-Based Biomarkers for Early Detection of Asymptomatic Lung Cancer in High-Risk Heavy Smokers"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2026-09",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-02-17",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2029-06-30",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2029-06-30",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2025-02-04",
+      "studyFirstSubmitQcDate": "2025-02-04",
+      "studyFirstPostDateStruct": {
+        "date": "2025-02-10",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-09-08",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-09-11",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Everest Detection, Inc.",
+        "class": "INDUSTRY"
+      }
+    },
+    "oversightModule": {
+      "oversightHasDmc": false
+    },
+    "descriptionModule": {
+      "briefSummary": "The goal of this observational study is to develop and evaluate a blood test for asymptomatic heavy smokers to screen for those at highest risk of developing lung cancer. The aim of this study is to develop, train, and validate a blood-based screening test designed to detect biomarkers associated with lung cancer. The study will utilize samples collected from 4 distinct cohorts.\n\n1. Participants confirmed to have lung cancer\n2. Participants without cancer\n3. Participants with moderate risk of lung cancer (indeterminate)\n4. Participants confirmed to have other types of cancers linked to smoking\n\nThe main question this study aims to answer is whether the blood test can detect existing early-stage lung cancer in heavy smokers without symptoms and to provide insights into device performance and long-term outcomes when scans show no nodules, benign findings, or indeterminate nodules.\n\nParticipants will provide blood samples at the start of the study and during follow-up visits at 12 and 24 months. Participants will share information about their smoking history, lung cancer status, and relevant medical history\n\nResearchers will collect blood samples, process them, and analyze the biomarkers at the Everest Detection laboratory. No results will be shared with participants or their doctors. The study will run for about 48 months, including a 24-month enrollment period and 24 months of follow-up to track participants' health and lung cancer outcomes."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Lung Cancers"
+      ]
+    },
+    "designModule": {
+      "studyType": "OBSERVATIONAL",
+      "patientRegistry": false,
+      "designInfo": {
+        "observationalModel": "CASE_CONTROL",
+        "timePerspective": "PROSPECTIVE"
+      },
+      "bioSpec": {
+        "retention": "SAMPLES_WITH_DNA",
+        "description": "Plasma and buffy coat samples derived from whole blood collection"
+      },
+      "enrollmentInfo": {
+        "count": 350,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "Non-Cancer Cohort",
+          "description": "Patients With No Lung Nodules at Initial Computed Tomography (CT) Scan or Stable, Non-Suspicious Nodules at Follow-Up CT Scans"
+        },
+        {
+          "label": "Indeterminate Cohort",
+          "description": "Patients with indeterminate pulmonary nodules actively in follow-up"
+        },
+        {
+          "label": "Highly Suspicious or Confirmed Lung Cancer Cohort",
+          "description": "Patients with pathologically diagnosed, untreated lung cancer or highly suspicious for lung cancer that are still in workup"
+        },
+        {
+          "label": "\"Other Cancer\" Cohort",
+          "description": "Patients with a pathologic diagnosis of cancers highly associated with smoking"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Biomarker Discovery and Validation for Blood-Based Early Lung Cancer Detection in Heavy Smokers",
+          "description": "This study aims to discover and optimize biomarkers for a blood-based test that detects early-stage lung cancer in heavy smokers without symptoms. Researchers will develop and validate the test using blood samples from individuals with lung cancer, those at varying screening risk levels (Lung-RADS 1-4), and heavy smokers with smoking-related cancers.",
+          "timeFrame": "From enrollment to the end of the study observation period of 24 months"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\nAll Participants:\n\n* Understands the study and can provide written informed consent\n* Willing and able to provide a blood sample\n* Age 30-80\n* Current or former smoker\n\nNon-Cancer Cohort:\n\n* Recent CT scan within 3 months AND\n* No lung nodules (Lung-RADS 1) or benign/stable nodules\n\nIndeterminate Cohort:\n\n* Recent CT scan within 12 months AND\n* Indeterminate lung nodules under active monitoring\n\nHighly Suspicious or Confirmed Lung Cancer Cohort:\n\n* Confirmed untreated lung cancer OR\n* Highly suspicious lung nodules undergoing diagnostic work-up\n\nOther Cancer Cohort:\n\n\\- Confirmed, untreated cancer associated with smoking\n\nExclusion Criteria:\n\n* Cancer diagnosis within the last 5 years\n* Systemic therapy, radiation, or surgery for cancer within 1 year prior to enrollment\n* Any history of hematologic malignancies or myelodysplasia\n* Known infection with HIV, HCV, or HBV\n* Active pregnancy",
+      "healthyVolunteers": true,
+      "sex": "ALL",
+      "minimumAge": "30 Years",
+      "maximumAge": "80 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ],
+      "studyPopulation": "Both smokers that meet USPSTF criteria for annual LD-CT screening (age 50-80, smoked \\>20 pack years, quit \\<15yr ago if former smoker) to younger (\\>30 years) and lighter smokers (\\>10 pack years)",
+      "samplingMethod": "NON_PROBABILITY_SAMPLE"
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Everest Detection Clinical Operations",
+          "role": "CONTACT",
+          "phone": "786.542.2122",
+          "email": "apclinops@everestdetection.com"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Site 101",
+          "status": "RECRUITING",
+          "city": "Oklahoma City",
+          "state": "Oklahoma",
+          "zip": "73102",
+          "country": "United States",
+          "geoPoint": {
+            "lat": 35.46756,
+            "lon": -97.51643
+          }
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO",
+      "description": "Individual participant data (IPD) will not be shared due to study-specific considerations and data use restrictions."
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D008175",
+          "term": "Lung Neoplasms"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D012142",
+          "term": "Respiratory Tract Neoplasms"
+        },
+        {
+          "id": "D013899",
+          "term": "Thoracic Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D008171",
+          "term": "Lung Diseases"
+        },
+        {
+          "id": "D012140",
+          "term": "Respiratory Tract Diseases"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}
