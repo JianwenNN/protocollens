@@ -1,0 +1,1907 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT05768139",
+      "orgStudyIdInfo": {
+        "id": "27691"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "2023-504807-94-00",
+          "type": "CTIS"
+        },
+        {
+          "id": "2023-000442-41",
+          "type": "EUDRACT_NUMBER"
+        },
+        {
+          "id": "J6M-OX-JSGA",
+          "type": "OTHER",
+          "domain": "Eli Lilly and Company"
+        },
+        {
+          "id": "STX-478-101",
+          "type": "OTHER",
+          "domain": "Scorpion Therapeutics, Inc"
+        },
+        {
+          "id": "2023",
+          "type": "NIH",
+          "link": "https://reporter.nih.gov/quickSearch/2023"
+        }
+      ],
+      "organization": {
+        "fullName": "Eli Lilly and Company",
+        "class": "INDUSTRY"
+      },
+      "briefTitle": "First-in-Human Study of Tersolisib (STX-478) as Monotherapy and in Combination With Other Antineoplastic Agents in Participants With Advanced Solid Tumors",
+      "officialTitle": "First-in-Human Study of STX-478, a Mutant-Selective PI3Kα Inhibitor as Monotherapy and in Combination With Other Antineoplastic Agents in Participants With Advanced Solid Tumors",
+      "acronym": "PIKALO-1"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2026-07",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2023-04-17",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2030-07",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2030-07",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2023-03-01",
+      "studyFirstSubmitQcDate": "2023-03-13",
+      "studyFirstPostDateStruct": {
+        "date": "2023-03-14",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-07-03",
+      "lastUpdatePostDateStruct": {
+        "date": "2026-07-07",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Eli Lilly and Company",
+        "class": "INDUSTRY"
+      }
+    },
+    "oversightModule": {
+      "isFdaRegulatedDrug": true,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "Study STX-478-101 (LY4064809) is a multipart, open-label, phase 1/2 study evaluating the safety, tolerability, pharmacokinetics (PK), and preliminary antitumor activity of STX-478 (LY4064809) in participants with advanced solid tumors with P13Ka mutations.\n\nPart 1 will evaluate STX-478 as monotherapy in participants with advanced solid tumors. Part 2 will evaluate STX-478 therapy as combination therapy with fulvestrant in participants with hormone receptor positive (HR+) breast cancer. Part 3 will evaluate STX-478 as combination therapy with endocrine therapy (aromatase inhibitors, fulvestrant, tamoxifen, or imlunestrant) and a CDK4/6 Inhibitor (either Ribociclib, Palbociclib or Abemaciclib) in participants with HR+ breast cancer.\n\nEach study part will include a 28-day screening period, followed by treatment with STX-478 monotherapy or combination therapy."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Breast Cancer",
+        "Solid Tumors, Adult"
+      ],
+      "keywords": [
+        "Breast Neoplasms",
+        "Neoplasms by Site",
+        "Neoplasms",
+        "Breast Diseases",
+        "HER2-negative breast cancer",
+        "HR-positive breast cancer",
+        "Gynecologic cancer",
+        "Endometrial cancer",
+        "Ovarian cancer",
+        "Cervical cancer",
+        "Head and neck cancer",
+        "Head and neck squamous cell carcinoma",
+        "Fulvestrant",
+        "Antineoplastic Agents",
+        "PI3Kα",
+        "PI3K alpha",
+        "PI3Kα mutation",
+        "Alpelisib",
+        "STX-478",
+        "PI3Kα inhibitor",
+        "Estrogen Receptor Antagonists",
+        "Estrogen Antagonists",
+        "Hormone Receptor Antagonists",
+        "Hormone Antagonists",
+        "Hormones, Hormone Substitutes, and Hormone Antagonists",
+        "Physiological Effects of Drugs",
+        "Palbociclib",
+        "Ribociclib",
+        "PIK3CA",
+        "PIK3CA mutation",
+        "Aromatase inhibitor",
+        "Letrozole",
+        "Anastrozole",
+        "Exemestane",
+        "Imlunestrant",
+        "Inavolisib",
+        "Capivasertib",
+        "Abemaciclib"
+      ]
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "SEQUENTIAL",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": {
+          "masking": "NONE",
+          "maskingDescription": "In Part 1, Part 2 B0, B2, and B3, and Part 3 C0, D0, E0, F and A8, participants are assigned to intervention. In Part 2 B1 and Part 3 C1, D1, and E1, participants are randomized to doses"
+        }
+      },
+      "enrollmentInfo": {
+        "count": 880,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "Dose Escalation (Advanced Solid Tumors)",
+          "type": "EXPERIMENTAL",
+          "description": "* Cohort A0: Advanced Solid tumors expressing PI3Kα mutations\n* Cohort A1: HR+ breast cancer expressing PI3Kα mutations",
+          "interventionNames": [
+            "Drug: STX-478"
+          ]
+        },
+        {
+          "label": "Dose Expansion",
+          "type": "EXPERIMENTAL",
+          "description": "* Cohort A2: Gynecologic cancers\n* Cohort A3: Head and Neck Squamous Cell Carcinoma\n* Cohorts A4/A5: Other solid tumors not included in Cohorts A1, A2, A3 expressing PI3Kα mutations\n* Cohort A6: Endometrial cancer\n* Cohort A7: Non-gastrointestinal solid tumors",
+          "interventionNames": [
+            "Drug: STX-478"
+          ]
+        },
+        {
+          "label": "Dose Selection/Expansion: Combination STX-478 + fulvestrant",
+          "type": "EXPERIMENTAL",
+          "description": "Cohort B: HR+/HER2- or HR+/HER2low breast cancer expressing PI3Kα mutations",
+          "interventionNames": [
+            "Drug: STX-478",
+            "Drug: Fulvestrant"
+          ]
+        },
+        {
+          "label": "Dose Selection/Expansion Combination",
+          "type": "EXPERIMENTAL",
+          "description": "STX-478 + Endocrine therapy + CDK4/6 inhibitor Cohort C/D/E: HR+/HER2- or HR+/HER2low breast cancer expressing PI3Ka mutations",
+          "interventionNames": [
+            "Drug: STX-478",
+            "Drug: Fulvestrant",
+            "Drug: Ribociclib",
+            "Drug: Palbociclib",
+            "Drug: Letrozole",
+            "Drug: Anastrozole",
+            "Drug: Exemestane",
+            "Drug: Tamoxifen",
+            "Drug: Abemaciclib",
+            "Drug: Imlunestrant"
+          ]
+        },
+        {
+          "label": "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]",
+          "type": "EXPERIMENTAL",
+          "description": "CDK4/6 inhibitor therapy in Cohort A8: all solid tumors Cohort B2 and Cohort F: HR+/HER2- or HR+/HER2 low breast cancer expressing PI3Kα mutations",
+          "interventionNames": [
+            "Drug: STX-478",
+            "Drug: Fulvestrant",
+            "Drug: Ribociclib",
+            "Drug: Palbociclib",
+            "Drug: Letrozole",
+            "Drug: Anastrozole",
+            "Drug: Exemestane",
+            "Drug: Abemaciclib",
+            "Drug: Metformin"
+          ]
+        }
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "STX-478",
+          "description": "STX-478 is a mutant-selective PI3Kα inhibitor",
+          "armGroupLabels": [
+            "Dose Escalation (Advanced Solid Tumors)",
+            "Dose Expansion",
+            "Dose Selection/Expansion Combination",
+            "Dose Selection/Expansion: Combination STX-478 + fulvestrant",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "LY4064809",
+            "Tersolisib"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Fulvestrant",
+          "description": "Fulvestrant",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Dose Selection/Expansion: Combination STX-478 + fulvestrant",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Faslodex"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Ribociclib",
+          "description": "Ribociclib",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Kisqali"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Palbociclib",
+          "description": "Palbociclib",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Ibrance"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Letrozole",
+          "description": "Letrozole",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Femara"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Anastrozole",
+          "description": "Anastrozole",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Arimidex"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Exemestane",
+          "description": "Exemestane",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Aromasin"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Tamoxifen",
+          "description": "Tamoxifen",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination"
+          ],
+          "otherNames": [
+            "Nolvadex",
+            "Soltamox"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Abemaciclib",
+          "description": "Abemaciclib",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination",
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ],
+          "otherNames": [
+            "Verzenio"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Imlunestrant",
+          "description": "Imlunestrant",
+          "armGroupLabels": [
+            "Dose Selection/Expansion Combination"
+          ],
+          "otherNames": [
+            "Inluriyo"
+          ]
+        },
+        {
+          "type": "DRUG",
+          "name": "Metformin",
+          "description": "Metformin",
+          "armGroupLabels": [
+            "Experimental: Drug to Drug Interaction (DDI) Metformin STX-478 +/- ET ([AIs or fulvestrant]"
+          ]
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Number of participants who experience at least 1 Dose Limiting Toxicity (DLT)",
+          "timeFrame": "First 28 days of treatment"
+        },
+        {
+          "measure": "Proportion of participants who experience at least 1 DLT during the first 28 days of treatment",
+          "timeFrame": "First 28 days of treatment"
+        },
+        {
+          "measure": "Objective response rate (ORR) defined as the percentage of participants with partial response or complete response based on RECIST 1.1",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Incidence of TEAEs/SAEs ≥ grade 2",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Frequency of TEAEs according to CTCAE v5.0 criteria",
+          "timeFrame": "12 months"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Cmax of STX-478",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "AUC(0-inf) of STX-478",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "AUC(0-t) of STX-478",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "AUC(0-τ) of STX-478",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Change from baseline in ctDNA levels",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Changes in circulating markers of glucose metabolism as assessed by changes in circulating glycosylated hemoglobin (HbA1c)",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Changes in circulating markers of glucose metabolism as assessed by circulating fasting plasma glucose",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Changes in circulating markers of glucose metabolism as assessed by circulating C-peptide",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Change in ECOG performance status",
+          "timeFrame": "12 months"
+        },
+        {
+          "measure": "Disease Control Rate (DCR) per RECIST v1.1, measured as percentage of participants with Complete Response",
+          "timeFrame": "12 months"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Key Inclusion Criteria:\n\n* Has an advanced or refractory solid tumor malignancy that is metastatic or locally advanced and unresectable (as specified by Cohort)\n* Has a new or recent tumor biopsy (collected at screening, if feasible) or will provide an adequate tissue sample prior to screening\n* Has a tumor that harbors a documented PI3Kα mutation (cohort specific criterion for cohort-specific mutation types)\n* Is ≥18 years of age at the time of signing the ICF\n* Has an ECOG performance status score of 0 or 1 at screening\n* Has adequate organ function as defined per protocol\n\nKey Exclusion Criteria:\n\n* Has history (within ≤2 years before screening) of a solid tumor or hematological malignancy that is histologically distinct from the cancers being studied\n* Has symptomatic brain or spinal metastases\n* Has an established diagnosis of uncontrolled diabetes mellitus (defined as HbA1c ≥8% and/or FBG ≥140 mg/dL \\[7.7 mmol/L\\] and/or requiring or required insulin).\n* Has had prior treatment with PI3K/AKT/mTOR inhibitor(s), except in certain circumstances\n* Has had treatment with any local or systemic antineoplastic therapy or investigational anticancer agent within 14 days or 4 half-lives, whichever is longer, prior to the initiation of study treatment up to a maximum washout period of 28 days. Endocrine therapy does not require a washout period if the patient is enrolling in a cohort with the same combination endocrine therapy.\n* Has toxicities from previous anticancer therapies that have not resolved to baseline levels or CTCAE grade ≤1, with the exception of alopecia and peripheral neuropathy.\n* Has had radiotherapy within 14 days before the initiation of study treatment",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "contactsLocationsModule": {
+      "centralContacts": [
+        {
+          "name": "Trial questions or participation questions: 1-877-CTLILLY (1-877-285-4559) or",
+          "role": "CONTACT",
+          "phone": "1-317-615-4559",
+          "email": "LillyTrials@Lilly.com"
+        },
+        {
+          "name": "Physicians interested in becoming principal investigators please contact",
+          "role": "CONTACT",
+          "email": "clinical_inquiry_hub@lilly.com"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "name": "Call 1-877-CTLILLY (1-877-285-4559) or 1-317-615-4559 Mon - Fri 8 AM - 8 PM Eastern time (UTC/GMT - 5 hours, EST)",
+          "affiliation": "Eli Lilly and Company",
+          "role": "STUDY_DIRECTOR"
+        }
+      ],
+      "locations": [
+        {
+          "facility": "Ellison Clinic at Saint John's",
+          "status": "RECRUITING",
+          "city": "Los Angeles",
+          "state": "California",
+          "zip": "90064",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Reva Basho",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 34.05223,
+            "lon": -118.24368
+          }
+        },
+        {
+          "facility": "UCSF Medical Center at Mission Bay",
+          "status": "RECRUITING",
+          "city": "San Francisco",
+          "state": "California",
+          "zip": "94143",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Varun Monga",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 37.77493,
+            "lon": -122.41942
+          }
+        },
+        {
+          "facility": "University of Colorado Cancer Center",
+          "status": "RECRUITING",
+          "city": "Aurora",
+          "state": "Colorado",
+          "zip": "80045",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Anthony Elias",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 39.72943,
+            "lon": -104.83192
+          }
+        },
+        {
+          "facility": "Yale-New Haven Hospital",
+          "status": "COMPLETED",
+          "city": "New Haven",
+          "state": "Connecticut",
+          "zip": "06510",
+          "country": "United States",
+          "geoPoint": {
+            "lat": 41.30815,
+            "lon": -72.92816
+          }
+        },
+        {
+          "facility": "Florida Cancer Specialists ORLANDO/DDU",
+          "status": "COMPLETED",
+          "city": "Lake Mary",
+          "state": "Florida",
+          "zip": "32746",
+          "country": "United States",
+          "geoPoint": {
+            "lat": 28.75888,
+            "lon": -81.31784
+          }
+        },
+        {
+          "facility": "Moffitt Cancer Center",
+          "status": "RECRUITING",
+          "city": "Tampa",
+          "state": "Florida",
+          "zip": "33612",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Aixa Soyano",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 27.94752,
+            "lon": -82.45843
+          }
+        },
+        {
+          "facility": "Winship Cancer Institute, Emory University",
+          "status": "RECRUITING",
+          "city": "Atlanta",
+          "state": "Georgia",
+          "zip": "30322",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Manali Bhave",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 33.749,
+            "lon": -84.38798
+          }
+        },
+        {
+          "facility": "University of Iowa",
+          "status": "RECRUITING",
+          "city": "Iowa City",
+          "state": "Iowa",
+          "zip": "52242",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Mark Burkard",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.66113,
+            "lon": -91.53017
+          }
+        },
+        {
+          "facility": "Louisiana State University Health Sciences Center",
+          "status": "RECRUITING",
+          "city": "New Orleans",
+          "state": "Louisiana",
+          "zip": "70112",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Shou-Ching Tang",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 29.95465,
+            "lon": -90.07507
+          }
+        },
+        {
+          "facility": "Massachusetts General Hospital",
+          "status": "RECRUITING",
+          "city": "Boston",
+          "state": "Massachusetts",
+          "zip": "02115",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Dejan Juric",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          }
+        },
+        {
+          "facility": "Dana-Farber Cancer Institute",
+          "status": "RECRUITING",
+          "city": "Boston",
+          "state": "Massachusetts",
+          "zip": "02215",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Antonio Giordano",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          }
+        },
+        {
+          "facility": "Barbara Ann Karmanos Cancer Institute",
+          "status": "TERMINATED",
+          "city": "Detroit",
+          "state": "Michigan",
+          "zip": "48201",
+          "country": "United States",
+          "geoPoint": {
+            "lat": 42.33143,
+            "lon": -83.04575
+          }
+        },
+        {
+          "facility": "START Midwest",
+          "status": "RECRUITING",
+          "city": "Grand Rapids",
+          "state": "Michigan",
+          "zip": "49546",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Manish Sharma",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.96336,
+            "lon": -85.66809
+          }
+        },
+        {
+          "facility": "Saint Luke's Cancer Institute",
+          "status": "RECRUITING",
+          "city": "Kansas City",
+          "state": "Missouri",
+          "zip": "64111-3220",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Timothy Pluard",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 39.09973,
+            "lon": -94.57857
+          }
+        },
+        {
+          "facility": "Washington University",
+          "status": "RECRUITING",
+          "city": "St Louis",
+          "state": "Missouri",
+          "zip": "63110",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Cynthia Ma",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          }
+        },
+        {
+          "facility": "Memorial Sloan Kettering Cancer Center",
+          "status": "RECRUITING",
+          "city": "New York",
+          "state": "New York",
+          "zip": "10065",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Komal Jhaveri",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          }
+        },
+        {
+          "facility": "UH Cleveland Medical Center",
+          "status": "RECRUITING",
+          "city": "Cleveland",
+          "state": "Ohio",
+          "zip": "44106",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Alberto Montero",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.4995,
+            "lon": -81.69541
+          }
+        },
+        {
+          "facility": "Stefanie Spielman Comprehensive Breast Center",
+          "status": "RECRUITING",
+          "city": "Columbus",
+          "state": "Ohio",
+          "zip": "43212",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Robert Wesolowski",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 39.96118,
+            "lon": -82.99879
+          }
+        },
+        {
+          "facility": "Providence Cancer Institute Franz Clinic",
+          "status": "RECRUITING",
+          "city": "Portland",
+          "state": "Oregon",
+          "zip": "97213",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "David Page",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 45.52345,
+            "lon": -122.67621
+          }
+        },
+        {
+          "facility": "The West Clinic, PLLC dba West Cancer Center",
+          "status": "RECRUITING",
+          "city": "Germantown",
+          "state": "Tennessee",
+          "zip": "38138",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Gregory Vidal",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 35.08676,
+            "lon": -89.81009
+          }
+        },
+        {
+          "facility": "Sarah Cannon Research Institute",
+          "status": "RECRUITING",
+          "city": "Nashville",
+          "state": "Tennessee",
+          "zip": "37203",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "SMO Sarah Cannon Research Inst.",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 36.16589,
+            "lon": -86.78444
+          }
+        },
+        {
+          "facility": "Mary Crowley Cancer Research Center",
+          "status": "COMPLETED",
+          "city": "Dallas",
+          "state": "Texas",
+          "zip": "75230",
+          "country": "United States",
+          "geoPoint": {
+            "lat": 32.78306,
+            "lon": -96.80667
+          }
+        },
+        {
+          "facility": "Texas Oncology-Baylor Charles A. Sammons Cancer Center",
+          "status": "RECRUITING",
+          "city": "Dallas",
+          "state": "Texas",
+          "zip": "75246-2092",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Joyce O'Shaughnessy",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 32.78306,
+            "lon": -96.80667
+          }
+        },
+        {
+          "facility": "University of Texas Southwestern",
+          "status": "RECRUITING",
+          "city": "Dallas",
+          "state": "Texas",
+          "zip": "75390",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Nisha Unni",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 32.78306,
+            "lon": -96.80667
+          }
+        },
+        {
+          "facility": "University of Texas MD Anderson Cancer Center",
+          "status": "RECRUITING",
+          "city": "Houston",
+          "state": "Texas",
+          "zip": "77030",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Jordi Rodon Ahnert",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 29.76328,
+            "lon": -95.36327
+          }
+        },
+        {
+          "facility": "START San Antonio",
+          "status": "RECRUITING",
+          "city": "San Antonio",
+          "state": "Texas",
+          "zip": "78229",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Amita Patnaik",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 29.42412,
+            "lon": -98.49363
+          }
+        },
+        {
+          "facility": "START Mountain Region",
+          "status": "RECRUITING",
+          "city": "West Valley City",
+          "state": "Utah",
+          "zip": "84119",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "William McKean",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.69161,
+            "lon": -112.00105
+          }
+        },
+        {
+          "facility": "USO-Virginia Cancer Specialists, PC",
+          "status": "RECRUITING",
+          "city": "Fairfax",
+          "state": "Virginia",
+          "zip": "22031",
+          "country": "United States",
+          "contacts": [
+            {
+              "name": "Alexander Spira",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 38.84622,
+            "lon": -77.30637
+          }
+        },
+        {
+          "facility": "Institut Jules Bordet",
+          "status": "RECRUITING",
+          "city": "Anderlecht",
+          "zip": "1070",
+          "country": "Belgium",
+          "contacts": [
+            {
+              "name": "Philippe Aftimos",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 50.83619,
+            "lon": 4.31454
+          }
+        },
+        {
+          "facility": "UZ Leuven",
+          "status": "RECRUITING",
+          "city": "Leuven",
+          "zip": "3000",
+          "country": "Belgium",
+          "contacts": [
+            {
+              "name": "Patrick Neven",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 50.87959,
+            "lon": 4.70093
+          }
+        },
+        {
+          "facility": "Institut Bergonié - Centre Régional de Lutte Contre Le Cancer de Bordeaux et Sud Ouest",
+          "status": "RECRUITING",
+          "city": "Bordeaux",
+          "zip": "33000",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Maxime Brunet",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 44.84124,
+            "lon": -0.58046
+          }
+        },
+        {
+          "facility": "Centre Leon Berard",
+          "status": "RECRUITING",
+          "city": "Lyon",
+          "zip": "69008",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Isabelle Ray-Coquard",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 45.74906,
+            "lon": 4.84789
+          }
+        },
+        {
+          "facility": "Institut Paoli-Calmettes",
+          "status": "RECRUITING",
+          "city": "Marseille",
+          "zip": "13009",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Cecile Vicier",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 43.29695,
+            "lon": 5.38107
+          }
+        },
+        {
+          "facility": "Centre Antoine-Lacassagne",
+          "status": "RECRUITING",
+          "city": "Nice",
+          "zip": "06189",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Philippe Follana",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 43.70313,
+            "lon": 7.26608
+          }
+        },
+        {
+          "facility": "Institut Claudius Regaud",
+          "status": "RECRUITING",
+          "city": "Toulouse",
+          "zip": "31059",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Eleonora De Maio",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 43.60426,
+            "lon": 1.44367
+          }
+        },
+        {
+          "facility": "Gustave Roussy",
+          "status": "RECRUITING",
+          "city": "Villejuif",
+          "zip": "94805",
+          "country": "France",
+          "contacts": [
+            {
+              "name": "Barbara Pistilli",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 48.7939,
+            "lon": 2.35992
+          }
+        },
+        {
+          "facility": "Universitätsklinikum Erlangen",
+          "status": "NOT_YET_RECRUITING",
+          "city": "Erlangen",
+          "zip": "91054",
+          "country": "Germany",
+          "contacts": [
+            {
+              "name": "Peter Fasching",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 49.59099,
+            "lon": 11.00783
+          }
+        },
+        {
+          "facility": "Mater Misericordiae Hospital",
+          "status": "RECRUITING",
+          "city": "Dublin",
+          "country": "Ireland",
+          "contacts": [
+            {
+              "name": "Austin Duffy",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 53.33306,
+            "lon": -6.24889
+          }
+        },
+        {
+          "facility": "Azienda Ospedaliera Nazionale Santi Antonio e Biagio e Cesare Arrigo",
+          "status": "RECRUITING",
+          "city": "Alessandria",
+          "zip": "15100",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Giulia Gallizzi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 44.90924,
+            "lon": 8.61007
+          }
+        },
+        {
+          "facility": "Spedali Civili di Brescia",
+          "status": "NOT_YET_RECRUITING",
+          "city": "Brescia",
+          "zip": "25123",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Rebecca Pedersini",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 45.53558,
+            "lon": 10.21472
+          }
+        },
+        {
+          "facility": "Istituto Nazionale per lo Studio e la Cura dei Tumori",
+          "status": "RECRUITING",
+          "city": "Milan",
+          "zip": "20133",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Giulia Bianchi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.78235,
+            "lon": 12.59836
+          }
+        },
+        {
+          "facility": "Istituto Europeo di Oncologia",
+          "status": "RECRUITING",
+          "city": "Milan",
+          "zip": "20141",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Giuseppe Curigliano",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.78235,
+            "lon": 12.59836
+          }
+        },
+        {
+          "facility": "Fondazione IRCCS San Gerardo dei Tintori",
+          "status": "RECRUITING",
+          "city": "Monza",
+          "zip": "20900",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Marina Cazzaniga",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 45.58005,
+            "lon": 9.27246
+          }
+        },
+        {
+          "facility": "Azienda Ospedaliero Universitaria Pisana - Stabilimento Santa Chiara",
+          "status": "RECRUITING",
+          "city": "Pisa",
+          "zip": "56126",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Carmelo Bengala",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 43.70853,
+            "lon": 10.4036
+          }
+        },
+        {
+          "facility": "Ospedale Santa Maria delle Croci",
+          "status": "RECRUITING",
+          "city": "Ravenna",
+          "zip": "48121",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Stefano Tamberi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 44.41344,
+            "lon": 12.20121
+          }
+        },
+        {
+          "facility": "Fondazione Policlinico Universitario Agostino Gemelli",
+          "status": "RECRUITING",
+          "city": "Roma",
+          "zip": "168",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Gennaro Daniele",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 44.99364,
+            "lon": 11.10642
+          }
+        },
+        {
+          "facility": "Centro Ricerche Cliniche di Verona s.r.l.",
+          "status": "RECRUITING",
+          "city": "Verona",
+          "zip": "37134",
+          "country": "Italy",
+          "contacts": [
+            {
+              "name": "Andrea Zivi",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 45.43854,
+            "lon": 10.9938
+          }
+        },
+        {
+          "facility": "National Hospital Organization Kyushu Cancer Center",
+          "status": "RECRUITING",
+          "city": "Fukuoka",
+          "zip": "811-1395",
+          "country": "Japan",
+          "contacts": [
+            {
+              "role": "CONTACT",
+              "phone": "81120023812"
+            },
+            {
+              "name": "Eriko Tokunaga",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 33.6,
+            "lon": 130.41667
+          }
+        },
+        {
+          "facility": "Kansai Medical University Hospital",
+          "status": "RECRUITING",
+          "city": "Hirakata",
+          "zip": "573-1191",
+          "country": "Japan",
+          "contacts": [
+            {
+              "role": "CONTACT",
+              "phone": "81120023812"
+            },
+            {
+              "name": "Toshio Shimizu",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 34.81352,
+            "lon": 135.64914
+          }
+        },
+        {
+          "facility": "The Cancer Institute Hospital of JFCR",
+          "status": "RECRUITING",
+          "city": "Kōtō City",
+          "zip": "135-8550",
+          "country": "Japan",
+          "contacts": [
+            {
+              "role": "CONTACT",
+              "phone": "81120023812"
+            },
+            {
+              "name": "Yukinori Ozaki",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 32.77856,
+            "lon": 130.74537
+          }
+        },
+        {
+          "facility": "Kyoto University Hospital",
+          "status": "RECRUITING",
+          "city": "Kyoto",
+          "zip": "606-8507",
+          "country": "Japan",
+          "contacts": [
+            {
+              "role": "CONTACT",
+              "phone": "81120023812"
+            },
+            {
+              "name": "TAKAKO NAKAJIMA",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 35.02107,
+            "lon": 135.75385
+          }
+        },
+        {
+          "facility": "Netherlands Cancer Institute",
+          "status": "RECRUITING",
+          "city": "Amsterdam",
+          "zip": "1066CX",
+          "country": "Netherlands",
+          "contacts": [
+            {
+              "name": "Marloes G.J. van Dongen",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 52.37403,
+            "lon": 4.88969
+          }
+        },
+        {
+          "facility": "Erasmus MC",
+          "status": "RECRUITING",
+          "city": "Rotterdam",
+          "zip": "3015GD",
+          "country": "Netherlands",
+          "contacts": [
+            {
+              "name": "Agnes Jager",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 51.9225,
+            "lon": 4.47917
+          }
+        },
+        {
+          "facility": "Hospital Quiron Barcelona",
+          "status": "RECRUITING",
+          "city": "Barcelona",
+          "zip": "08023",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Guzman Alonso Casal",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          }
+        },
+        {
+          "facility": "South Texas Accelerated Research Therapeutics (START) Barcelona- HM Nou Delfos",
+          "status": "RECRUITING",
+          "city": "Barcelona",
+          "zip": "08023",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Tatiana Hernandez Guerrero",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          }
+        },
+        {
+          "facility": "Instituto Oncologico Dr Rosell (IOR)",
+          "status": "RECRUITING",
+          "city": "Barcelona",
+          "zip": "08028",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Jose Manuel Perez Garcia",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          }
+        },
+        {
+          "facility": "Hospital Universitari Vall d'Hebron",
+          "status": "RECRUITING",
+          "city": "Barcelona",
+          "zip": "08035",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Cristina Saura Manich",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          }
+        },
+        {
+          "facility": "Hospital San Pedro",
+          "status": "RECRUITING",
+          "city": "Logroño",
+          "zip": "26006",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Maria Jose de Miguel Luken",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 42.46615,
+            "lon": -2.45115
+          }
+        },
+        {
+          "facility": "MD Anderson Cancer Center",
+          "status": "RECRUITING",
+          "city": "Madrid",
+          "zip": "28033",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Maria Calvo Plaza",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          }
+        },
+        {
+          "facility": "Hospital Clinico San Carlos",
+          "status": "RECRUITING",
+          "city": "Madrid",
+          "zip": "28040",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Jorge Bartolome Arcilla",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          }
+        },
+        {
+          "facility": "Hospital Universitario Fundación Jiménez Díaz",
+          "status": "RECRUITING",
+          "city": "Madrid",
+          "zip": "28040",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Bernard Doger de Speville Uribe",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          }
+        },
+        {
+          "facility": "Hospital Universitario HM Sanchinarro",
+          "status": "RECRUITING",
+          "city": "Madrid",
+          "zip": "28050",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Juan Jose Soto",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          }
+        },
+        {
+          "facility": "Hospital Universitario Quironsalud Madrid",
+          "status": "RECRUITING",
+          "city": "Pozuelo de Alarcón",
+          "zip": "28223",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Valentina Boni",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 40.43293,
+            "lon": -3.81338
+          }
+        },
+        {
+          "facility": "Hospital Universitari Sant Joan de Reus",
+          "status": "RECRUITING",
+          "city": "Reus",
+          "zip": "43204",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Kepa Amillano Parraga",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 41.15612,
+            "lon": 1.10687
+          }
+        },
+        {
+          "facility": "Hospital Universitario Virgen Macarena",
+          "status": "RECRUITING",
+          "city": "Seville",
+          "zip": "41009",
+          "country": "Spain",
+          "contacts": [
+            {
+              "name": "Luis de la Cruz Merino",
+              "role": "PRINCIPAL_INVESTIGATOR"
+            }
+          ],
+          "geoPoint": {
+            "lat": 37.38283,
+            "lon": -5.97317
+          }
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D001943",
+          "term": "Breast Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D001941",
+          "term": "Breast Diseases"
+        },
+        {
+          "id": "D016889",
+          "term": "Endometrial Neoplasms"
+        },
+        {
+          "id": "D010051",
+          "term": "Ovarian Neoplasms"
+        },
+        {
+          "id": "D002583",
+          "term": "Uterine Cervical Neoplasms"
+        },
+        {
+          "id": "D006258",
+          "term": "Head and Neck Neoplasms"
+        },
+        {
+          "id": "D000077195",
+          "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+          "id": "D009477",
+          "term": "Hereditary Sensory and Autonomic Neuropathies"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D012871",
+          "term": "Skin Diseases"
+        },
+        {
+          "id": "D017437",
+          "term": "Skin and Connective Tissue Diseases"
+        },
+        {
+          "id": "D014594",
+          "term": "Uterine Neoplasms"
+        },
+        {
+          "id": "D005833",
+          "term": "Genital Neoplasms, Female"
+        },
+        {
+          "id": "D014565",
+          "term": "Urogenital Neoplasms"
+        },
+        {
+          "id": "D014591",
+          "term": "Uterine Diseases"
+        },
+        {
+          "id": "D005831",
+          "term": "Genital Diseases, Female"
+        },
+        {
+          "id": "D052776",
+          "term": "Female Urogenital Diseases"
+        },
+        {
+          "id": "D005261",
+          "term": "Female Urogenital Diseases and Pregnancy Complications"
+        },
+        {
+          "id": "D000091642",
+          "term": "Urogenital Diseases"
+        },
+        {
+          "id": "D000091662",
+          "term": "Genital Diseases"
+        },
+        {
+          "id": "D004701",
+          "term": "Endocrine Gland Neoplasms"
+        },
+        {
+          "id": "D010049",
+          "term": "Ovarian Diseases"
+        },
+        {
+          "id": "D000291",
+          "term": "Adnexal Diseases"
+        },
+        {
+          "id": "D004700",
+          "term": "Endocrine System Diseases"
+        },
+        {
+          "id": "D006058",
+          "term": "Gonadal Disorders"
+        },
+        {
+          "id": "D002577",
+          "term": "Uterine Cervical Diseases"
+        },
+        {
+          "id": "D002294",
+          "term": "Carcinoma, Squamous Cell"
+        },
+        {
+          "id": "D002277",
+          "term": "Carcinoma"
+        },
+        {
+          "id": "D009375",
+          "term": "Neoplasms, Glandular and Epithelial"
+        },
+        {
+          "id": "D009370",
+          "term": "Neoplasms by Histologic Type"
+        },
+        {
+          "id": "D009421",
+          "term": "Nervous System Malformations"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D020271",
+          "term": "Heredodegenerative Disorders, Nervous System"
+        },
+        {
+          "id": "D019636",
+          "term": "Neurodegenerative Diseases"
+        },
+        {
+          "id": "D011115",
+          "term": "Polyneuropathies"
+        },
+        {
+          "id": "D010523",
+          "term": "Peripheral Nervous System Diseases"
+        },
+        {
+          "id": "D009468",
+          "term": "Neuromuscular Diseases"
+        },
+        {
+          "id": "D000013",
+          "term": "Congenital Abnormalities"
+        },
+        {
+          "id": "D009358",
+          "term": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+        },
+        {
+          "id": "D030342",
+          "term": "Genetic Diseases, Inborn"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C000730635",
+          "term": "STX-478"
+        },
+        {
+          "id": "D000077267",
+          "term": "Fulvestrant"
+        },
+        {
+          "id": "C000589651",
+          "term": "ribociclib"
+        },
+        {
+          "id": "C500026",
+          "term": "palbociclib"
+        },
+        {
+          "id": "D000077289",
+          "term": "Letrozole"
+        },
+        {
+          "id": "D000077384",
+          "term": "Anastrozole"
+        },
+        {
+          "id": "C056516",
+          "term": "exemestane"
+        },
+        {
+          "id": "D013629",
+          "term": "Tamoxifen"
+        },
+        {
+          "id": "C000590451",
+          "term": "abemaciclib"
+        },
+        {
+          "id": "C000719756",
+          "term": "Imlunestrant"
+        },
+        {
+          "id": "D008687",
+          "term": "Metformin"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D004958",
+          "term": "Estradiol"
+        },
+        {
+          "id": "D004963",
+          "term": "Estrenes"
+        },
+        {
+          "id": "D004962",
+          "term": "Estranes"
+        },
+        {
+          "id": "D013256",
+          "term": "Steroids"
+        },
+        {
+          "id": "D000072473",
+          "term": "Fused-Ring Compounds"
+        },
+        {
+          "id": "D011083",
+          "term": "Polycyclic Compounds"
+        },
+        {
+          "id": "D045166",
+          "term": "Estradiol Congeners"
+        },
+        {
+          "id": "D012739",
+          "term": "Gonadal Steroid Hormones"
+        },
+        {
+          "id": "D042341",
+          "term": "Gonadal Hormones"
+        },
+        {
+          "id": "D006728",
+          "term": "Hormones"
+        },
+        {
+          "id": "D006730",
+          "term": "Hormones, Hormone Substitutes, and Hormone Antagonists"
+        },
+        {
+          "id": "D009570",
+          "term": "Nitriles"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D014230",
+          "term": "Triazoles"
+        },
+        {
+          "id": "D001393",
+          "term": "Azoles"
+        },
+        {
+          "id": "D006573",
+          "term": "Heterocyclic Compounds, 1-Ring"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D013267",
+          "term": "Stilbenes"
+        },
+        {
+          "id": "D001597",
+          "term": "Benzylidene Compounds"
+        },
+        {
+          "id": "D001555",
+          "term": "Benzene Derivatives"
+        },
+        {
+          "id": "D006841",
+          "term": "Hydrocarbons, Aromatic"
+        },
+        {
+          "id": "D006844",
+          "term": "Hydrocarbons, Cyclic"
+        },
+        {
+          "id": "D006838",
+          "term": "Hydrocarbons"
+        },
+        {
+          "id": "D001645",
+          "term": "Biguanides"
+        },
+        {
+          "id": "D006146",
+          "term": "Guanidines"
+        },
+        {
+          "id": "D000578",
+          "term": "Amidines"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

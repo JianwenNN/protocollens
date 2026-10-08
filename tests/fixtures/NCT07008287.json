@@ -1,0 +1,259 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT07008287",
+      "orgStudyIdInfo": {
+        "id": "IBI344-RWS-002"
+      },
+      "organization": {
+        "fullName": "Innovent Biologics (Suzhou) Co. Ltd.",
+        "class": "INDUSTRY"
+      },
+      "briefTitle": "Real-world Study of Taletrectinib for Advanced ROS1+ NSCLC With Brain Metastases",
+      "officialTitle": "A Multicenter, Non-interventional, Observational Study of Taletrectinib for Advanced ROS1+ NSCLC With Brain Metastases"
+    },
+    "statusModule": {
+      "statusVerifiedDate": "2025-07",
+      "overallStatus": "RECRUITING",
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "startDateStruct": {
+        "date": "2025-06-04",
+        "type": "ACTUAL"
+      },
+      "primaryCompletionDateStruct": {
+        "date": "2027-06",
+        "type": "ESTIMATED"
+      },
+      "completionDateStruct": {
+        "date": "2027-12",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2025-05-28",
+      "studyFirstSubmitQcDate": "2025-06-04",
+      "studyFirstPostDateStruct": {
+        "date": "2025-06-06",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2025-07-17",
+      "lastUpdatePostDateStruct": {
+        "date": "2025-07-22",
+        "type": "ACTUAL"
+      }
+    },
+    "sponsorCollaboratorsModule": {
+      "responsibleParty": {
+        "type": "SPONSOR"
+      },
+      "leadSponsor": {
+        "name": "Innovent Biologics (Suzhou) Co. Ltd.",
+        "class": "INDUSTRY"
+      }
+    },
+    "oversightModule": {
+      "isFdaRegulatedDrug": false,
+      "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+      "briefSummary": "This is a multicenter, non-interventional, observational real-world study to evaluate the efficacy and safety of Taletrectinib in ROS1-positive non-small cell lung cancer (NSCLC) with brain metastases. Patients deemed eligible for Taletrectinib by their physicians were enrolled after providing informed consent. Taletrectinib will be administered according to clinical practice and data on treatment patterns, clinical outcomes, and safety will be collected during routine evaluations."
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Non-Small Cell Lung Cancer"
+      ]
+    },
+    "designModule": {
+      "studyType": "OBSERVATIONAL",
+      "patientRegistry": false,
+      "designInfo": {
+        "observationalModel": "COHORT",
+        "timePerspective": "PROSPECTIVE"
+      },
+      "enrollmentInfo": {
+        "count": 100,
+        "type": "ESTIMATED"
+      }
+    },
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "label": "cohort 1",
+          "description": "ROS1 fusion positive NSCLC patients with brain metastases who received taletrecitnib",
+          "interventionNames": [
+            "Drug: Taletrectinib"
+          ]
+        }
+      ],
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "Taletrectinib",
+          "description": "Taletrectinib, 600mg, QD",
+          "armGroupLabels": [
+            "cohort 1"
+          ],
+          "otherNames": [
+            "AB-106",
+            "DS-6051b"
+          ]
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "ORR",
+          "description": "Objective response rate",
+          "timeFrame": "6 months"
+        },
+        {
+          "measure": "iORR",
+          "description": "Intracranial objective response rate",
+          "timeFrame": "6 months"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "PFS",
+          "description": "Progression free survival",
+          "timeFrame": "25 months"
+        },
+        {
+          "measure": "DoR",
+          "description": "Duration of response",
+          "timeFrame": "25 months"
+        },
+        {
+          "measure": "DCR",
+          "description": "Disease control rate",
+          "timeFrame": "6 months"
+        },
+        {
+          "measure": "OS",
+          "description": "Overall survival",
+          "timeFrame": "51 months"
+        },
+        {
+          "measure": "iPFS",
+          "description": "Intracranial progress free survival",
+          "timeFrame": "25 months"
+        },
+        {
+          "measure": "iDoR",
+          "description": "Intracranial duration of response",
+          "timeFrame": "6 months"
+        },
+        {
+          "measure": "iDCR",
+          "description": "Intracranial disease control rate",
+          "timeFrame": "6 months"
+        },
+        {
+          "measure": "Adverse events",
+          "description": "Type, incidence, severity, timing, seriousness, and relatedness of adverse events and laboratory abnormalities, graded by the NCI CTCAE 5.0",
+          "timeFrame": "25 months"
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\nPatients must meet all of the following criteria to be eligible for enrollment into the study:\n\n1. Age ≥ 18 years.\n2. Histologically or cytologically metastatic NSCLC (UICC/AJCC TNM Staging System, 9th Edition, Stage Ⅳ).\n3. At least one measurable target tumor lesion as accessed by RECIST v1.1 criteria.\n4. Radiographically confirmed brain metastasis(es) , with stable CNS symptoms within 2 weeks prior to enrollment.\n5. Documented ROS1 gene fusion identified by an approved molecular testing method (FISH, RT-PCR, or NGS).\n6. Considered by the investigator to be candidates for Taletrectinib treatment ; OR Patients with ≤6 months of prior Taletrectinib exposure enrolled retrospectively. (Note: For retrospective patients deceased before enrollment, waiver of informed consent is required. Patients who initiated and discontinued treatment within 6 months prior to signing informed consent are eligible).\n7. Signed Informed Consent.\n\nExclusion Criteria:\n\nPatient presenting with any of the following criteria will not be included in the study：\n\n1. Patients with driver gene mutations/alterations that have approved targeted therapies , including but not limited to EGFR, ALK, RET, etc.\n2. Currently participating in other interventional clinical trials or having received investigational drug treatment within 4 weeks prior to enrollment .\n3. Pregnancy or breastfeeding.\n4. Patients with uncontrolled co-morbidities who are assessed by the investigator not to receive targeted therapy.\n5. Other conditions that are assessed by the investigator to be unsuitable for enrollment in this study.",
+      "healthyVolunteers": false,
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ],
+      "studyPopulation": "Patients with ROS1-positive non-small cell lung cancer (NSCLC) with brain metastasis",
+      "samplingMethod": "NON_PROBABILITY_SAMPLE"
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "facility": "Zhejiang Cancer Hospital",
+          "status": "RECRUITING",
+          "city": "Hangzhou",
+          "state": "Zhejiang",
+          "zip": "201107",
+          "country": "China",
+          "contacts": [
+            {
+              "name": "Joshua GUO",
+              "role": "CONTACT",
+              "phone": "+86-18819430923",
+              "email": "joshua.guo@innoventbio.com"
+            }
+          ],
+          "geoPoint": {
+            "lat": 30.29365,
+            "lon": 120.16142
+          }
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    }
+  },
+  "derivedSection": {
+    "miscInfoModule": {
+      "versionHolder": "2026-10-01"
+    },
+    "conditionBrowseModule": {
+      "meshes": [
+        {
+          "id": "D002289",
+          "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+      ],
+      "ancestors": [
+        {
+          "id": "D002283",
+          "term": "Carcinoma, Bronchogenic"
+        },
+        {
+          "id": "D001984",
+          "term": "Bronchial Neoplasms"
+        },
+        {
+          "id": "D008175",
+          "term": "Lung Neoplasms"
+        },
+        {
+          "id": "D012142",
+          "term": "Respiratory Tract Neoplasms"
+        },
+        {
+          "id": "D013899",
+          "term": "Thoracic Neoplasms"
+        },
+        {
+          "id": "D009371",
+          "term": "Neoplasms by Site"
+        },
+        {
+          "id": "D009369",
+          "term": "Neoplasms"
+        },
+        {
+          "id": "D008171",
+          "term": "Lung Diseases"
+        },
+        {
+          "id": "D012140",
+          "term": "Respiratory Tract Diseases"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C000720459",
+          "term": "taletrectinib"
+        }
+      ]
+    }
+  },
+  "hasResults": false
+}

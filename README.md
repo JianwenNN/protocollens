@@ -2,9 +2,11 @@
 
 ProtocolLens helps patients and study teams find clinical trials that may fit, and explains why. Given a plain-language patient description, it searches ClinicalTrials.gov, filters candidates on structured fields, and then judges each eligibility criterion as **met**, **not met**, or **unknown**, citing the source text.
 
-It also analyzes full protocol PDFs and answers role-specific questions about any trial.
+It is a full-stack web app: a FastAPI backend running an LLM agent, and a React + TypeScript frontend that streams the agent's progress live.
 
-> **Status:** The PDF analysis and role-based Q&A work today. Trial matching is under active development. See the [roadmap](#roadmap).
+<!-- Add once deployed: **Live demo:** https://... -->
+
+> **Status:** Trial matching is under active development. The original protocol PDF analysis and role-based Q&A work today in the legacy Streamlit app. See the [roadmap](#roadmap).
 
 > **Disclaimer:** ProtocolLens is a research and portfolio project. It is not medical advice and does not determine eligibility. Results are framed as "potentially eligible"; the final decision always belongs to the study site.
 
@@ -21,11 +23,13 @@ ProtocolLens treats this as two separate problems:
 
 | Feature | Status |
 | --- | --- |
-| Protocol PDF analysis: extract a structured trial object from an uploaded protocol | Available |
-| Role-based Q&A: ask questions about a trial from a patient, coordinator, or sponsor perspective | Available |
+| Protocol PDF analysis: structured trial object from an uploaded protocol (legacy Streamlit app) | Available |
+| Role-based Q&A about a trial from a patient, coordinator, or sponsor perspective | Available in the legacy app; moving to the API |
 | Trial search via ClinicalTrials.gov API v2 with location and status filters | In progress |
 | Structured pre-filter (age, sex, study type, per-site recruiting status) | In progress |
 | Per-criterion matching with met / not met / unknown and reasons | In progress |
+| FastAPI backend with a streamed agent progress feed | In progress |
+| React frontend: matching page, trial detail, criterion table | In progress |
 | Follow-up questions when patient information is missing | Planned |
 | Deterministic clinical calculators (eGFR, CrCl, BMI, unit conversion) | Planned |
 | Audit trail of every agent decision | Planned |
@@ -54,109 +58,113 @@ flowchart TD
 
 ## Architecture
 
-Two entry points share one core:
-
-```
-Trial matching (new)            PDF analysis (existing)
-        |                               |
-  app/matching/                 pdf_parser, orchestrator
-        |                               |
-        +-------------+-----------------+
-                      |
-               Shared core
-   TrialObject schema · GeminiClient · role-based Q&A
+```mermaid
+flowchart LR
+    FE["frontend/<br/>React + TypeScript"] -- "HTTP + SSE" --> API["backend/api/<br/>FastAPI"]
+    API --> CORE["backend/app/<br/>agent, pre-filter, criteria"]
+    CORE -.-> CT[(ClinicalTrials.gov)]
+    CORE -.-> GEM[(Gemini)]
+    LS["backend/legacy_streamlit/"] --> CORE
 ```
 
+- **`frontend/`** never calls Gemini or ClinicalTrials.gov directly, so API keys stay on the server.
+- **`backend/api/`** is a thin layer: validation, sessions, and the event stream.
+- **`backend/app/`** holds all matching logic and imports no web framework, so it is tested on its own.
+
+The agent takes many seconds per request, so the backend streams progress ("Searching", "Filtering 42 trials", "Matching criteria") and each trial result over server-sent events as it finishes.
+
 ```
-app/
-  schemas/        # TrialObject, Criterion, PatientProfile
-  utils/          # Gemini clients, PDF parser
-  matching/       # API client, mapper, pre-filter, criteria, agent
-  prompts/        # Prompt templates
-  orchestrator.py # PDF entry point
-samples/          # Saved API responses, used as test fixtures
-evals/            # Labeled data and evaluation scripts
-tests/
-docs/design.md    # Design doc
+backend/
+  app/                # core: schemas, matching, prompts, Gemini client
+  api/                # FastAPI routes, sessions, SSE
+  legacy_streamlit/   # original PDF analysis UI
+  tests/
+  evals/
+frontend/
+  src/                # pages, components, hooks, generated API types
+docs/design.md        # full design doc
 ```
+
+See [docs/design.md](docs/design.md) for the API routes, event types, and design decisions.
 
 ## Tech stack
 
-- Python, Pydantic
-- Google Gemini API (`google-genai`), Flash for parsing and matching, Pro for report synthesis
-- ClinicalTrials.gov API v2 (no API key required)
-- Streamlit UI
-- pdfplumber for the PDF entry point
+| Layer | Tools |
+| --- | --- |
+| Backend | Python, FastAPI, Pydantic |
+| LLM | Google Gemini API: Flash for parsing and matching, Pro for report synthesis |
+| Data | ClinicalTrials.gov API v2 (no API key required) |
+| Frontend | React, TypeScript, Vite, Tailwind, shadcn/ui, TanStack Query |
+| Contract | TypeScript types generated from the OpenAPI schema |
+| Tests | pytest; Vitest + React Testing Library |
+| CI | GitHub Actions |
 
 ## Getting started
 
+**Backend**
+
 ```bash
-git clone <your-repo-url>
-cd protocollens
+cd backend
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in the project root:
+Create `backend/.env`:
 
 ```
 GEMINI_API_KEY=your_key_here
+FRONTEND_ORIGIN=http://localhost:5173
 ```
 
-Run the app:
+```bash
+uvicorn api.main:app --reload    # http://localhost:8000, API docs at /docs
+```
+
+**Frontend**
 
 ```bash
-streamlit run app.py
+cd frontend
+npm install
+npm run dev                      # http://localhost:5173
+```
+
+Create `frontend/.env`:
+
+```
+VITE_API_URL=http://localhost:8000
+```
+
+**Legacy PDF analysis app**
+
+```bash
+cd backend
+streamlit run legacy_streamlit/main.py
+```
+
+**Tests**
+
+```bash
+cd backend && pytest
+cd frontend && npm test
 ```
 
 ## Data and privacy
 
 - All patient examples in this repository are **synthetic**. Do not enter real patient information.
-- ProtocolLens is not HIPAA-compliant and is not designed to handle PHI.
+- ProtocolLens is not HIPAA-compliant and is not designed to handle PHI. Sessions are held in memory and expire; no patient text is written to disk.
 - Trial data comes from the public ClinicalTrials.gov registry. Registry entries summarize a protocol and can omit details; criteria marked "as defined per protocol" must be confirmed with the study site.
 
 ## Roadmap
 
-Timeline assumes part-time development. P3 and P4 dates are estimates.
+| Phase | Target | Scope | Status |
+| --- | --- | --- | --- |
+| P1 Full-stack minimal loop | Mid-Nov 2026 | Core matching, FastAPI with streamed progress, React UI, deployed demo | In progress |
+| P2 Evaluation | Jan 2027 | Labeled parsing set, TREC evaluation, keyword-search baseline | Planned |
+| P3 Agent upgrade | Mar 2027 (est.) | RxNorm and calculators, follow-up questions, LangGraph | Planned |
+| P4 MCP and audit trail | From Apr 2027 (est.) | MCP server, audit trail view, ICH/FDA resources | Planned |
 
-### P1: Minimal matching loop (Oct 2026)
-
-Exit criteria: a patient description returns nearby recruiting trials with per-criterion explanations, demo-ready.
-
-- [ ] ClinicalTrials.gov API client with search, fetch by ID, and local cache
-- [ ] Mapper from API JSON to `TrialObject`
-- [ ] `PatientProfile` schema and patient-description parsing
-- [ ] Structured pre-filter
-- [ ] Criteria parsing with caching
-- [ ] Per-criterion matching
-- [ ] Agent loop on Gemini function calling
-- [ ] Matching page in the Streamlit UI
-
-### P2: Evaluation (Nov to Dec 2026)
-
-Exit criteria: this README reports measured results against a baseline.
-
-- [ ] Hand-labeled set for criteria parsing (precision / recall)
-- [ ] Trial-level evaluation on TREC Clinical Trials Track data (NDCG@10, Precision@10)
-- [ ] Keyword-search baseline for comparison
-
-### P3: Agent upgrade (Jan to Feb 2027, estimated)
-
-Exit criteria: follow-up questions work end to end; ablation results published.
-
-- [ ] RxNorm drug-class lookup and deterministic calculators
-- [ ] Follow-up questions for missing patient information
-- [ ] LangGraph orchestration
-- [ ] Per-tool ablation study
-
-### P4: MCP and audit trail (from Mar 2027, estimated)
-
-Exit criteria: external MCP clients can call the tools; every agent decision is traceable.
-
-- [ ] ProtocolLens MCP server (FastMCP)
-- [ ] GxP-style audit trail of agent decisions
-- [ ] ICH/FDA guidance documents as MCP resources
+Tasks are tracked in [GitHub milestones](../../milestones). Exit criteria and the reasoning behind the order are in [docs/design.md](docs/design.md#roadmap).
 
 ## Background
 
